@@ -5,138 +5,115 @@
 
   --green-dark:#0f5d2f;
   --green-mid:#2f8f46;
-  --green-light:#b7f397;
 
-  --line:rgba(15,31,22,0.08);
+  --line:rgba(15,31,22,0.10);
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family: "Red Hat Display", sans-serif;
-  background:
-    radial-gradient(900px 500px at 20% 10%, rgba(183,243,151,0.45), transparent 60%),
-    var(--bg);
+  font-family:"Red Hat Display", sans-serif;
   color:var(--text);
+  background:
+    radial-gradient(900px 520px at 20% 10%, rgba(183,243,151,0.45), transparent 60%),
+    radial-gradient(900px 520px at 85% 15%, rgba(47,143,70,0.18), transparent 55%),
+    var(--bg);
 }
 
+/* ONE SCREEN LAYOUT */
 .wrap{
   max-width:1100px;
   margin:auto;
-  padding:48px 24px;   /* reduced from 80 */
-  min-height:100vh;    /* keeps layout within viewport */
+  padding: clamp(18px, 3vh, 40px) 24px;
+  min-height:100dvh;                 /* dynamic viewport height (better on mobile) */
   display:flex;
   flex-direction:column;
   justify-content:center;
+  gap: clamp(14px, 2vh, 26px);
+  overflow:hidden;                   /* prevents tiny accidental scroll */
 }
 
-
 /* HERO */
-
 .hero{
   display:flex;
   align-items:flex-start;
-  padding-bottom:34px;     /* reduced */
-  border-bottom:1px solid var(--line);
 }
-
 
 .company_name{
   font-weight:900;
-  letter-spacing:1.6px;
-  font-size:22px;          /* increased */
+  letter-spacing:2px;
+  font-size: clamp(20px, 2.3vh, 30px);   /* BIGGER always */
   color:var(--green-dark);
-  margin-bottom:14px;      /* slightly tighter */
+  margin-bottom: clamp(10px, 1.4vh, 18px);
 }
-
 
 .positioning{
-  font-size:52px;          /* reduced to fit */
   font-weight:900;
-  line-height:1.05;
-  max-width:900px;
-  margin-bottom:18px;      /* reduced */
+  line-height:1.03;
+  max-width: 980px;
+
+  /* scales with screen height + width */
+  font-size: clamp(34px, 5.6vh, 64px);
+
+  margin-bottom: clamp(10px, 1.6vh, 18px);
 }
 
-
 .description{
-  font-size:18px;
-  line-height:1.7;
   color:var(--muted);
-  max-width:760px;
+  line-height:1.6;
+
+  /* scales down on smaller screens */
+  font-size: clamp(14px, 1.9vh, 18px);
+
+  max-width: 860px;
 }
 
 /* CAPABILITIES */
-
 .capabilities{
-  padding-top:34px; /* reduced */
+  border-top:1px solid var(--line);
+  padding-top: clamp(14px, 2.2vh, 26px);
 }
-
 
 .section_title{
-  font-size:26px;
   font-weight:800;
-  margin-bottom:18px; /* reduced */
+  font-size: clamp(18px, 2.6vh, 28px);
+  margin-bottom: clamp(10px, 1.8vh, 18px);
 }
-
 
 .pillar_grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px; /* reduced */
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.8vh, 18px);
 }
-
 
 .pillar{
-  padding:20px;      /* reduced */
-  border-radius:18px;
-  background:white;
+  background:#ffffff;
   border:1px solid var(--line);
-  transition:all 0.25s ease;
-}
-
-
-.pillar:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 40px rgba(15,93,47,0.12);
+  border-radius:18px;
+  padding: clamp(14px, 2.2vh, 22px);
 }
 
 .pillar h3{
-  font-size:20px;
-  font-weight:800;
-  margin-bottom:12px;
   color:var(--green-dark);
+  font-weight:800;
+  font-size: clamp(16px, 2.2vh, 20px);
+  margin-bottom:8px;
 }
 
 .pillar p{
-  font-size:15px;
-  line-height:1.6;
   color:var(--muted);
+  line-height:1.55;
+  font-size: clamp(13px, 1.8vh, 15px);
 }
 
-/* Responsive */
-
-@media(max-width:900px){
-
-  .positioning{
-    font-size:38px;
-  }
-
-  .pillar_grid{
-    grid-template-columns:1fr;
-  }
-
-  .wrap{
-    padding:60px 20px;
-  }
-
+/* MOBILE: make pillars 2x2 style so it fits without scroll */
+@media (max-width: 720px){
+  .wrap{padding: 18px 16px;}
+  .pillar_grid{grid-template-columns: repeat(2, 1fr);}
 }
-.highlight{
-  background: linear-gradient(0deg, rgba(183,243,151,0.75), rgba(183,243,151,0.75));
-  padding: 0 6px;
-  border-radius: 10px;
+
+/* VERY SMALL SCREENS: 1 column but tighter spacing */
+@media (max-width: 420px){
+  .pillar_grid{grid-template-columns: 1fr;}
+  .pillar{border-radius:16px;}
 }

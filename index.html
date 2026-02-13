@@ -6,7 +6,6 @@
   <title>Growlen Technologies — Coffee Farming Automation</title>
   <meta name="description" content="Growlen builds intelligent systems that automate labour-intensive coffee operations — improving consistency, productivity, and long-term yield." />
 
-  <!-- Premium system-first font stack (Inter if available) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,12 +20,6 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">GROWLEN TECHNOLOGIES</div>
-
-      <!-- Optional minimal nav (kept subtle) -->
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </div>
   </header>
 
@@ -43,16 +36,59 @@
       </div>
     </section>
 
-    <!-- PROBLEM + CTA -->
-    <section class="problem" id="about">
-      <div class="container problem-grid">
-        <article class="problem-copy">
-          <div class="label">Problem</div>
-          <p class="copy">
-            Coffee plantations face labour shortages, rising costs, and inconsistent manual work that impacts yield and
-            plant health. Automation is becoming foundational.
-          </p>
-        </article>
+    <!-- CONTENT COLUMN (Problem + Approach stacked) -->
+    <section class="content">
+      <div class="container content-grid">
+
+        <!-- LEFT COLUMN: stacked sections -->
+        <div class="stack">
+
+          <article class="panel">
+            <div class="label">Problem</div>
+            <p class="copy">
+              Coffee plantations face labour shortages, rising costs, and inconsistent manual work that impacts yield and
+              plant health. Automation is becoming foundational.
+            </p>
+          </article>
+
+          <article class="panel panel-soft">
+            <div class="label">Our Approach</div>
+            <p class="copy">
+              We build intelligent field infrastructure for coffee plantations — combining optimised vision with field-ready
+              robotics to enable autonomy where it matters most.
+            </p>
+            <p class="emphasis">Designed for real-world deployment. Built for scale.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOTTOM 2-COLUMN: boxes left + CTA right -->
+    <section class="bottom">
+      <div class="container bottom-grid">
+
+        <div class="capabilities">
+          <div class="cap-title">Core capabilities</div>
+
+          <div class="cap-boxes">
+            <div class="cap-box">
+              <div class="cap-head">Optimised vision</div>
+              <div class="cap-text">Optimised vision for harsh field conditions</div>
+            </div>
+
+            <div class="cap-box">
+              <div class="cap-head">Workflow integration</div>
+              <div class="cap-text">Integrates with existing machinery &amp; workflows</div>
+            </div>
+
+            <div class="cap-box">
+              <div class="cap-head">Built for scale</div>
+              <div class="cap-text">Built for plantation-scale deployment</div>
+            </div>
+          </div>
+        </div>
 
         <aside class="cta-card" aria-label="Email updates signup">
           <h3 class="cta-title">Join the next era of coffee automation.</h3>
@@ -71,27 +107,7 @@
             <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
           </form>
         </aside>
-      </div>
-    </section>
 
-    <!-- OUR APPROACH -->
-    <section class="approach" id="contact">
-      <div class="container approach-inner">
-        <div class="label">Our Approach</div>
-        <p class="copy">
-          We build intelligent field infrastructure for coffee plantations — combining optimised vision with field-ready
-          robotics to enable autonomy where it matters most.
-        </p>
-        <p class="emphasis">Designed for real-world deployment. Built for scale.</p>
-      </div>
-    </section>
-
-    <!-- CHIPS -->
-    <section class="chips">
-      <div class="container chips-inner" aria-label="Key benefits">
-        <span class="chip">Optimised vision for harsh field conditions</span>
-        <span class="chip">Integrates with existing machinery &amp; workflows</span>
-        <span class="chip">Built for plantation-scale deployment</span>
       </div>
     </section>
 
@@ -99,14 +115,6 @@
     <footer class="footer">
       <div class="container footer-inner">
         <a class="footer-link" href="mailto:hello@growlen.com">hello@growlen.com</a>
-        <div class="footer-sub">Piloting in Brazil | 2026</div>
-
-        <a class="linkedin" href="#" aria-label="LinkedIn (add link)">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6.94 8.5H4.2V20.8h2.74V8.5Zm.2-3.8A1.57 1.57 0 1 1 4 4.7a1.57 1.57 0 0 1 3.14 0ZM20.8 20.8h-2.74v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27v6.31H8.88V8.5h2.63v1.68h.04c.37-.7 1.28-1.43 2.63-1.43 2.81 0 3.33 1.85 3.33 4.25v7.8Z" fill="currentColor"/>
-          </svg>
-          <span>LinkedIn</span>
-        </a>
       </div>
     </footer>
 

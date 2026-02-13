@@ -6,7 +6,6 @@
   <title>GROWLEN TECHNOLOGIES</title>
   <meta name="description" content="Engineering the future of coffee farming." />
 
-  <!-- Red Hat Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -20,21 +19,24 @@
 
       <!-- Top brand strip (no nav) -->
       <header class="top">
+        <!-- If you have a real logo, use this instead of the mark:
+             <img class="logo" src="assets/logo.png" alt="Growlen Technologies logo" />
+        -->
         <div class="mark" aria-hidden="true"></div>
+
         <div class="top_text">
           <div class="brand_name">GROWLEN TECHNOLOGIES</div>
-          <div class="eyebrow">Coffee • Field Automation • Vision</div>
+          <!-- removed eyebrow line as requested -->
         </div>
       </header>
 
       <!-- Main 2-column hero -->
       <section class="hero">
 
-        <!-- LEFT 60% -->
+        <!-- LEFT -->
         <div class="left">
-
-          <h1 class="h1">GROWLEN TECHNOLOGIES</h1>
-          <h2 class="h2">Engineering the future of coffee farming</h2>
+          <!-- H1 is now the coffee farming line -->
+          <h1 class="h1">Engineering the future of coffee farming</h1>
 
           <p class="value">
             Growlen builds intelligent systems that automate labour-intensive coffee operations — improving consistency,
@@ -59,10 +61,9 @@
               </p>
             </div>
           </div>
-
         </div>
 
-        <!-- RIGHT 40% CTA CARD -->
+        <!-- RIGHT CTA -->
         <aside class="cta" aria-label="Updates signup">
           <div class="cta_head">
             <div class="cta_title">Join the next era of coffee automation.</div>
@@ -71,11 +72,13 @@
 
           <form class="form" action="#" method="post" onsubmit="return false;">
             <label class="sr-only" for="email">Email</label>
+
             <div class="form_row">
               <input id="email" name="email" type="email" autocomplete="email" inputmode="email"
                      placeholder="you@domain.com" required />
               <button type="submit">Request Updates</button>
             </div>
+
             <div class="micro">No spam. Only meaningful updates.</div>
           </form>
 
@@ -93,7 +96,7 @@
 
       </section>
 
-      <!-- Bottom benefit chips (full width) -->
+      <!-- Bottom benefit chips -->
       <section class="chips" aria-label="Benefits">
         <div class="chip">Optimised vision for harsh field conditions</div>
         <div class="chip">Integrates with existing machinery &amp; workflows</div>
@@ -104,7 +107,6 @@
   </main>
 
   <script>
-    // Minimal interaction until you wire a backend (Formspree/Mailchimp/etc.)
     document.querySelector(".form")?.addEventListener("submit", () => {
       const email = document.querySelector("#email")?.value?.trim();
       if (!email) return;

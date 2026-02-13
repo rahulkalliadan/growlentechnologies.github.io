@@ -1,5 +1,4 @@
 (function () {
-  // Email validation + friendly messaging
   const form = document.getElementById("updatesForm");
   const msg = document.getElementById("formMsg");
   const emailInput = document.getElementById("email");
@@ -23,9 +22,8 @@
       return;
     }
 
-    // No backend wired yet — success state
     msg.style.color = "rgba(26,77,46,0.92)";
-    msg.textContent = "Thanks — we’ll share pilot updates soon.";
+    msg.textContent = "Thanks — we’ll share updates soon.";
     form.reset();
   });
 })();

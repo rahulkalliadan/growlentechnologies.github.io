@@ -1,301 +1,62 @@
-:root{
-  --bg0:#F7FBF7;
-  --bg1:#F2F8F3;
+// Smooth reveal on scroll + basic form validation (no dependencies)
 
-  --text:#0E1A12;
-  --muted:rgba(14,26,18,0.68);
-  --muted2:rgba(14,26,18,0.52);
+(function () {
+  // Reveal animations
+  const els = document.querySelectorAll(".reveal");
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      }
+    },
+    { threshold: 0.14 }
+  );
+  els.forEach((el) => io.observe(el));
 
-  --accent:#1E8A4A;
-  --accent2:#2CCB72;
+  // Basic form validation
+  const form = document.getElementById("pilotForm");
+  if (!form) return;
 
-  --card:#FFFFFF;
-  --line:rgba(14,26,18,0.10);
+  const success = document.getElementById("formSuccess");
 
-  --shadow: 0 28px 90px rgba(10,18,12,0.10);
-  --shadow2: 0 18px 55px rgba(30,138,74,0.16);
-}
+  function setError(name, msg) {
+    const box = form.querySelector(`[data-err-for="${name}"]`);
+    if (box) box.textContent = msg || "";
+  }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
+  function validEmail(email) {
+    // Simple but reliable enough for frontend validation
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  }
 
-body{
-  font-family:"Red Hat Display", system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  color:var(--text);
-  background:
-    radial-gradient(900px 560px at 18% 10%, rgba(44,203,114,0.18), transparent 60%),
-    radial-gradient(900px 560px at 88% 18%, rgba(30,138,74,0.10), transparent 60%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
-  overflow:hidden;
-}
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (success) success.textContent = "";
 
-.page{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
 
-.container{
-  width:min(1180px, 92vw);
-  min-height:100vh;
-  padding: clamp(18px, 3vh, 42px);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  gap: clamp(12px, 2vh, 22px);
-}
+    let ok = true;
 
-/* Top strip */
-.top{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
+    if (name.length < 2) {
+      setError("name", "Please enter your name.");
+      ok = false;
+    } else setError("name", "");
 
-/* If you use <img class="logo"> */
-.logo{
-  width:44px;
-  height:44px;
-  object-fit:contain;
-}
+    if (!validEmail(email)) {
+      setError("email", "Please enter a valid email address.");
+      ok = false;
+    } else setError("email", "");
 
-/* Visible mark (previous was too subtle) */
-.mark{
-  width:44px;height:44px;border-radius:14px;
-  background: linear-gradient(135deg, rgba(30,138,74,0.30), rgba(44,203,114,0.22));
-  border: 1px solid rgba(30,138,74,0.28);
-  box-shadow: 0 18px 45px rgba(30,138,74,0.18);
-}
+    if (!ok) return;
 
-.top_text{display:flex;flex-direction:column;gap:0}
-
-/* Increased size of GROWLEN TECHNOLOGIES at top */
-.brand_name{
-  font-weight:900;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  font-size: 14px; /* increased */
-  color: rgba(14,26,18,0.72);
-}
-
-/* 2-column hero */
-.hero{
-  display:grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: clamp(16px, 2.6vw, 34px);
-  align-items:stretch;
-}
-
-/* Left */
-.left{
-  max-width: 72ch;
-  display:flex;
-  flex-direction:column;
-  gap: clamp(10px, 1.6vh, 16px);
-}
-
-/* H1 is now the big headline */
-.h1{
-  font-weight:900;
-  line-height:1.02;
-  font-size: clamp(34px, 6.4vh, 74px); /* increased */
-  color: rgba(14,26,18,0.94);
-}
-
-.value{
-  color: var(--muted);
-  line-height:1.55;
-  font-size: clamp(13.5px, 1.95vh, 16.5px);
-  margin-top: 2px;
-}
-
-/* Problem/Approach */
-.two_blocks{
-  margin-top: clamp(6px, 1.2vh, 10px);
-  display:grid;
-  gap: clamp(10px, 1.8vh, 16px);
-}
-
-.block{
-  padding-top: clamp(10px, 1.6vh, 14px);
-  border-top: 1px solid var(--line);
-}
-
-.label{
-  font-weight:900;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color: rgba(14,26,18,0.56);
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-
-.block p{
-  color: rgba(14,26,18,0.72);
-  line-height:1.55;
-  font-size: clamp(12.8px, 1.8vh, 15px);
-  max-width: 70ch;
-}
-
-/* CTA */
-.cta{
-  background: rgba(255,255,255,0.82);
-  border: 1px solid rgba(14,26,18,0.10);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  padding: clamp(16px, 2.6vh, 24px);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  position:relative;
-  overflow:hidden;
-}
-
-.cta::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background:
-    radial-gradient(520px 260px at 20% 10%, rgba(44,203,114,0.18), transparent 60%),
-    radial-gradient(520px 260px at 90% 30%, rgba(30,138,74,0.12), transparent 65%);
-  pointer-events:none;
-}
-
-.cta::after{
-  content:"";
-  position:absolute;
-  left:0; top:0; bottom:0;
-  width:3px;
-  background: linear-gradient(180deg, var(--accent2), var(--accent));
-  opacity:0.9;
-}
-
-.cta_head{position:relative}
-.cta_title{
-  font-weight:900;
-  line-height:1.08;
-  font-size: clamp(18px, 2.9vh, 26px);
-}
-.cta_sub{
-  margin-top: 8px;
-  color: var(--muted);
-  line-height:1.5;
-  font-size: clamp(12.8px, 1.8vh, 14.8px);
-}
-
-/* Form row */
-.form{position:relative; margin-top: clamp(10px, 2vh, 16px);}
-.form_row{
-  display:grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px;
-}
-
-input{
-  width:100%;
-  border-radius: 14px;
-  border: 1px solid rgba(14,26,18,0.14);
-  background: rgba(255,255,255,0.97);
-  padding: 12px 14px;
-  font-weight: 700;
-  font-size: 14px;
-  outline:none;
-}
-
-input::placeholder{color:rgba(14,26,18,0.38)}
-input:focus{
-  border-color: rgba(30,138,74,0.46);
-  box-shadow: 0 0 0 4px rgba(44,203,114,0.14);
-}
-
-button{
-  border:none;
-  border-radius: 14px;
-  padding: 12px 14px;
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  cursor:pointer;
-  color:#ffffff;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: var(--shadow2);
-  transition: transform 0.12s ease, filter 0.12s ease;
-}
-button:hover{filter:brightness(1.04)}
-button:active{transform: translateY(1px)}
-
-.micro{
-  margin-top: 10px;
-  color: var(--muted2);
-  font-size: 12px;
-}
-
-/* CTA footer mini bullets */
-.cta_footer{
-  position:relative;
-  margin-top: clamp(10px, 2vh, 16px);
-  padding-top: 12px;
-  border-top: 1px solid rgba(14,26,18,0.10);
-  display:grid;
-  gap: 8px;
-}
-
-.mini{
-  color: rgba(14,26,18,0.60);
-  font-size: 12.5px;
-  line-height: 1.35;
-  display:flex;
-  gap: 10px;
-  align-items:flex-start;
-}
-
-.dot{
-  width:8px;height:8px;border-radius:50%;
-  background: linear-gradient(135deg, var(--accent2), var(--accent));
-  margin-top: 5px;
-  flex:0 0 auto;
-}
-
-/* Bottom benefit cards */
-.chips{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.chip{
-  background: rgba(255,255,255,0.74);
-  border: 1px solid rgba(14,26,18,0.10);
-  border-radius: 18px;
-  padding: 12px 14px;
-  box-shadow: 0 16px 40px rgba(10,18,12,0.06);
-  font-weight: 800;
-  color: rgba(14,26,18,0.72);
-  text-align:left;
-  font-size: clamp(12.4px, 1.7vh, 14px);
-  line-height: 1.35;
-}
-
-/* Accessibility */
-.sr-only{
-  position:absolute;
-  width:1px;height:1px;
-  padding:0;margin:-1px;
-  overflow:hidden;clip:rect(0,0,0,0);
-  border:0;
-}
-
-/* Mobile */
-@media (max-width: 920px){
-  body{ overflow:auto; }
-  .container{ min-height:100vh; }
-  .hero{ grid-template-columns: 1fr; }
-  .chips{ grid-template-columns: 1fr; }
-}
-
-/* Short heights */
-@media (max-height: 760px){
-  .container{ padding: 14px; gap: 12px; }
-  .two_blocks{ gap: 12px; }
-  input, button{ padding: 10px 12px; }
-}
+    // No backend yet: show success (wire Formspree/Mailchimp later)
+    if (success) {
+      success.textContent = "Thanks — we’ll reach out with pilot details soon.";
+    }
+    form.reset();
+  });
+})();

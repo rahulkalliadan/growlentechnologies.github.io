@@ -434,6 +434,11 @@ button:active{transform: translateY(1px)}
   background: rgba(255,255,255,0.80);
   border: 1px solid rgba(26,26,26,0.10);
   box-shadow: 0 14px 40px rgba(26,26,26,0.06);
+  .partner-logo-img--zoom{
+  transform: scale(1.35);
+  transform-origin: center;
+}
+
 }
 
 

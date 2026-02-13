@@ -6,6 +6,7 @@
   <title>GROWLEN TECHNOLOGIES</title>
   <meta name="description" content="Engineering the future of coffee farming." />
 
+  <!-- Red Hat Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,13 +16,22 @@
 
 <body>
   <main class="page">
-    <div class="wrap">
+    <div class="container">
 
+      <!-- Top brand strip (no nav) -->
+      <header class="top">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="top_text">
+          <div class="brand_name">GROWLEN TECHNOLOGIES</div>
+          <div class="eyebrow">Coffee • Field Automation • Vision</div>
+        </div>
+      </header>
+
+      <!-- Main 2-column hero -->
       <section class="hero">
 
-        <!-- LEFT (60%) -->
+        <!-- LEFT 60% -->
         <div class="left">
-          <div class="eyebrow">Coffee • Field Automation • Vision</div>
 
           <h1 class="h1">GROWLEN TECHNOLOGIES</h1>
           <h2 class="h2">Engineering the future of coffee farming</h2>
@@ -31,7 +41,7 @@
             productivity, and long-term yield.
           </p>
 
-          <div class="split">
+          <div class="two_blocks">
             <div class="block">
               <div class="label">Problem</div>
               <p>
@@ -49,35 +59,41 @@
               </p>
             </div>
           </div>
+
         </div>
 
-        <!-- RIGHT (40%) CTA CARD -->
-        <aside class="cta" aria-label="Email capture">
-          <div class="cta_top">
+        <!-- RIGHT 40% CTA CARD -->
+        <aside class="cta" aria-label="Updates signup">
+          <div class="cta_head">
             <div class="cta_title">Join the next era of coffee automation.</div>
             <div class="cta_sub">Get pilot updates and partnership announcements.</div>
           </div>
 
           <form class="form" action="#" method="post" onsubmit="return false;">
             <label class="sr-only" for="email">Email</label>
-
             <div class="form_row">
               <input id="email" name="email" type="email" autocomplete="email" inputmode="email"
                      placeholder="you@domain.com" required />
               <button type="submit">Request Updates</button>
             </div>
-
             <div class="micro">No spam. Only meaningful updates.</div>
           </form>
 
-          <div class="cta_hint">
-            For pilots and partnerships, reply to the confirmation email once we’re live.
+          <div class="cta_footer">
+            <div class="mini">
+              <span class="dot" aria-hidden="true"></span>
+              Built for field deployment, not demos.
+            </div>
+            <div class="mini">
+              <span class="dot" aria-hidden="true"></span>
+              Designed to integrate into real workflows.
+            </div>
           </div>
         </aside>
 
       </section>
 
-      <!-- BOTTOM BENEFIT CHIPS -->
+      <!-- Bottom benefit chips (full width) -->
       <section class="chips" aria-label="Benefits">
         <div class="chip">Optimised vision for harsh field conditions</div>
         <div class="chip">Integrates with existing machinery &amp; workflows</div>
@@ -88,13 +104,12 @@
   </main>
 
   <script>
-    // Minimal "feels real" interaction until backend is wired.
-    const form = document.querySelector(".form");
-    form?.addEventListener("submit", () => {
+    // Minimal interaction until you wire a backend (Formspree/Mailchimp/etc.)
+    document.querySelector(".form")?.addEventListener("submit", () => {
       const email = document.querySelector("#email")?.value?.trim();
       if (!email) return;
       alert("Thanks — we’ll keep you posted.");
-      form.reset();
+      document.querySelector(".form")?.reset();
     });
   </script>
 </body>

@@ -4,138 +4,71 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Growlen Technologies</title>
-  <meta name="description" content="Growlen Technologies — Engineering the future of agriculture." />
 
-  <!-- Red Hat Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header class="header">
-    <div class="wrap header_inner">
-      <a class="brand" href="#">
-        <img class="brand_logo" src="assets/logo.png" alt="Growlen Technologies logo" />
-        <div class="brand_text">
-          <div class="brand_name">Growlen Technologies</div>
-          <div class="brand_tag">Engineering the future of agriculture</div>
-        </div>
-      </a>
-
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#focus">Focus</a>
-        <a href="#contact" class="btn">Contact</a>
-      </nav>
-    </div>
-  </header>
 
   <main class="wrap">
+
+    <!-- HERO -->
     <section class="hero">
+
       <div class="hero_left">
-        <p class="pill">Agri Robotics • Automation • Field Ready</p>
-        <h1>Engineering the future of agriculture.</h1>
-        <p class="lead">
-          Growlen builds practical robotics and automation to reduce labour dependency, improve consistency,
-          and enable scalable farm operations.
+        <div class="company_name">GROWLEN TECHNOLOGIES</div>
+
+        <h1 class="positioning">
+          Engineering the future of agriculture
+        </h1>
+
+        <p class="description">
+          Growlen Technologies develops intelligent field systems that automate labour-intensive agricultural operations.
+          Starting with coffee plantations, we are building scalable automation infrastructure that improves productivity,
+          reduces labour dependency, and enables sustainable, high-yield farming.
         </p>
-
-        <div class="cta">
-          <a class="btn primary" href="#contact">Get in touch</a>
-          <a class="btn ghost" href="#about">Learn more</a>
-        </div>
-
-        <div class="proof">
-          <div class="card">
-            <div class="kpi">Field-first</div>
-            <div class="kpi_sub">Designed for real farms</div>
-          </div>
-          <div class="card">
-            <div class="kpi">Modular</div>
-            <div class="kpi_sub">Multiple tasks, one platform</div>
-          </div>
-          <div class="card">
-            <div class="kpi">Pilot-ready</div>
-            <div class="kpi_sub">Built for trials & iteration</div>
-          </div>
-        </div>
       </div>
 
-      <div class="hero_right">
-        <div class="hero_panel">
-          <div class="panel_title">What we’re building</div>
-          <ul class="panel_list">
-            <li><span class="dot"></span>Robotics platform for repetitive farm tasks</li>
-            <li><span class="dot"></span>Computer vision + rugged mechatronics</li>
-            <li><span class="dot"></span>Deployment model aligned to ROI</li>
-          </ul>
-          <div class="panel_note">
-            Starting with high-value crops and expanding to a broader task ecosystem.
-          </div>
+    </section>
+
+
+    <!-- CAPABILITIES -->
+    <section class="capabilities">
+
+      <h2 class="section_title">Core Capabilities</h2>
+
+      <div class="pillar_grid">
+
+        <div class="pillar">
+          <h3>Intelligent Vision</h3>
+          <p>
+            Advanced perception systems engineered for dynamic and unstructured field environments.
+          </p>
         </div>
+
+        <div class="pillar">
+          <h3>Autonomous Systems</h3>
+          <p>
+            Retrofittable and modular autonomy platforms for agricultural machinery and field robotics.
+          </p>
+        </div>
+
+        <div class="pillar">
+          <h3>Scalable Infrastructure</h3>
+          <p>
+            Platform architecture designed for multi-crop expansion and long-term automation deployment.
+          </p>
+        </div>
+
       </div>
+
     </section>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>
-        Agriculture is facing rising input costs and labour uncertainty. Our thesis is simple:
-        well-designed robotics can deliver predictable throughput and quality, especially on high-value crops.
-      </p>
-    </section>
-
-    <section id="focus" class="section">
-      <h2>Focus areas</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Automation</h3>
-          <p>Replace repetitive manual work with consistent machine execution.</p>
-        </div>
-        <div class="card">
-          <h3>Reliability</h3>
-          <p>Rugged design for outdoor operations: dust, moisture, vibration.</p>
-        </div>
-        <div class="card">
-          <h3>Scalable adoption</h3>
-          <p>Business model aligned with farm economics and deployment realities.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <h2>Contact</h2>
-      <p>If you’re a farm operator, partner, or investor interested in pilots, let’s talk.</p>
-
-      <div class="contact_box">
-        <div>
-          <div class="label">Email</div>
-          <div class="value">your-email@domain.com</div>
-          <div class="hint">Replace this with your real email</div>
-        </div>
-
-        <a class="btn primary"
-           href="mailto:your-email@domain.com?subject=Growlen%20Technologies%20-%20Intro">
-          Email us
-        </a>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap footer_inner">
-      <div>© <span id="year"></span> Growlen Technologies</div>
-      <div class="foot_links">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

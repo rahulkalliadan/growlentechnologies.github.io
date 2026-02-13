@@ -123,3 +123,8 @@ body{
   }
 
 }
+.highlight{
+  background: linear-gradient(0deg, rgba(183,243,151,0.75), rgba(183,243,151,0.75));
+  padding: 0 6px;
+  border-radius: 10px;
+}

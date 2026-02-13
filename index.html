@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Growlen Technologies</title>
+  <title>GROWLEN TECHNOLOGIES</title>
+  <meta name="description" content="Engineering the future of coffee farming." />
 
+  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,73 +15,76 @@
 </head>
 
 <body>
-  <main class="wrap">
+  <main class="page">
+    <div class="wrap">
 
-    <section class="layout">
+      <!-- HERO -->
+      <header class="hero">
+        <div class="eyebrow">Venture-scale • Deep-tech • Field automation</div>
 
-      <!-- LEFT -->
-      <div class="left">
-        <div class="company_name">GROWLEN TECHNOLOGIES</div>
+        <h1 class="brand">GROWLEN TECHNOLOGIES</h1>
+        <p class="subtitle">Engineering the future of coffee farming</p>
 
-        <h1 class="positioning">Engineering the future of coffee farming</h1>
-
-        <p class="description">
-          Growlen Technologies builds intelligent field systems to automate labour-intensive coffee operations.
-          Using optimised vision and field-ready robotics, we help plantations reduce labour dependency, improve
-          consistency, and unlock sustainable yield gains.
+        <p class="value">
+          Growlen develops intelligent systems that automate the most labour-intensive operations in coffee plantations —
+          improving consistency, productivity, and long-term yield.
         </p>
+      </header>
 
-        <div class="meta_row">
-          <div class="meta">
-            <div class="meta_k">Focus</div>
-            <div class="meta_v">Coffee plantations</div>
-          </div>
-          <div class="meta">
-            <div class="meta_k">Thesis</div>
-            <div class="meta_v">Automation → ROI</div>
-          </div>
-          <div class="meta">
-            <div class="meta_k">Approach</div>
-            <div class="meta_v">Vision + Field Robotics</div>
-          </div>
+      <!-- 2-COLUMN: PROBLEM / APPROACH -->
+      <section class="duo" aria-label="Problem and Approach">
+        <article class="card">
+          <div class="label">Problem</div>
+          <p>
+            Coffee farms are facing increasing labour shortages, rising operational costs, and inconsistent manual
+            processes that directly impact yield and plant health. Automation is no longer optional. It is becoming
+            foundational.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Our Approach</div>
+          <p>
+            We are building intelligent field infrastructure for coffee plantations — combining optimised vision systems
+            with field-ready robotics to bring autonomy to the most labour-intensive operations. Designed for real-world
+            deployment. Built for scale.
+          </p>
+        </article>
+      </section>
+
+      <!-- CTA + EMAIL CAPTURE -->
+      <footer class="cta">
+        <div class="cta_text">
+          <h2>Join the next era of coffee automation.</h2>
+          <p>
+            We are working with early partners to deploy pilot systems and shape the future of plantation-scale
+            automation.
+          </p>
         </div>
-      </div>
 
-      <!-- RIGHT -->
-      <div class="right">
-        <div class="panel">
-          <div class="panel_title">Core Capabilities</div>
+        <!-- Email capture: uses Formspree placeholder; replace action when ready -->
+        <form class="form" action="#" method="post" onsubmit="return false;">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
+                 placeholder="you@company.com" required />
+          <button type="submit">Request Updates</button>
+          <div class="microcopy">No spam. Only meaningful updates.</div>
+        </form>
+      </footer>
 
-          <div class="pillar_grid">
-            <div class="pillar">
-              <h3>Optimised Vision</h3>
-              <p>Robust perception in harsh field conditions.</p>
-            </div>
-
-            <div class="pillar">
-              <h3>Field Automation</h3>
-              <p>Systems designed around real farm workflows.</p>
-            </div>
-
-            <div class="pillar">
-              <h3>Productivity &amp; Consistency</h3>
-              <p>Higher uptime, predictable outcomes, measurable ROI.</p>
-            </div>
-          </div>
-
-          <div class="cta_row">
-            <a class="btn primary" href="mailto:your-email@domain.com?subject=Growlen%20Technologies%20-%20Intro">Contact</a>
-            <a class="btn ghost" href="#" onclick="return false;">Pilot enquiries</a>
-          </div>
-
-          <div class="note">
-            Replace contact email in the code when ready.
-          </div>
-        </div>
-      </div>
-
-    </section>
-
+    </div>
   </main>
+
+  <script>
+    // OPTIONAL: if you want basic validation + "copied" feel without backend.
+    // Replace with real form action later.
+    const form = document.querySelector(".form");
+    form?.addEventListener("submit", () => {
+      const email = document.querySelector("#email")?.value?.trim();
+      if (!email) return;
+      alert("Thanks — we’ll keep you posted.");
+      form.reset();
+    });
+  </script>
 </body>
 </html>

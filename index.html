@@ -6,7 +6,6 @@
   <title>GROWLEN TECHNOLOGIES</title>
   <meta name="description" content="Engineering the future of coffee farming." />
 
-  <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -18,66 +17,78 @@
   <main class="page">
     <div class="wrap">
 
-      <!-- HERO -->
-      <header class="hero">
-        <div class="eyebrow">Venture-scale • Deep-tech • Field automation</div>
+      <section class="hero">
 
-        <h1 class="brand">GROWLEN TECHNOLOGIES</h1>
-        <p class="subtitle">Engineering the future of coffee farming</p>
+        <!-- LEFT (60%) -->
+        <div class="left">
+          <div class="eyebrow">Coffee • Field Automation • Vision</div>
 
-        <p class="value">
-          Growlen develops intelligent systems that automate the most labour-intensive operations in coffee plantations —
-          improving consistency, productivity, and long-term yield.
-        </p>
-      </header>
+          <h1 class="h1">GROWLEN TECHNOLOGIES</h1>
+          <h2 class="h2">Engineering the future of coffee farming</h2>
 
-      <!-- 2-COLUMN: PROBLEM / APPROACH -->
-      <section class="duo" aria-label="Problem and Approach">
-        <article class="card">
-          <div class="label">Problem</div>
-          <p>
-            Coffee farms are facing increasing labour shortages, rising operational costs, and inconsistent manual
-            processes that directly impact yield and plant health. Automation is no longer optional. It is becoming
-            foundational.
+          <p class="value">
+            Growlen builds intelligent systems that automate labour-intensive coffee operations — improving consistency,
+            productivity, and long-term yield.
           </p>
-        </article>
 
-        <article class="card">
-          <div class="label">Our Approach</div>
-          <p>
-            We are building intelligent field infrastructure for coffee plantations — combining optimised vision systems
-            with field-ready robotics to bring autonomy to the most labour-intensive operations. Designed for real-world
-            deployment. Built for scale.
-          </p>
-        </article>
-      </section>
+          <div class="split">
+            <div class="block">
+              <div class="label">Problem</div>
+              <p>
+                Coffee plantations face labour shortages, rising costs, and inconsistent manual work that impacts yield
+                and plant health. Automation is becoming foundational.
+              </p>
+            </div>
 
-      <!-- CTA + EMAIL CAPTURE -->
-      <footer class="cta">
-        <div class="cta_text">
-          <h2>Join the next era of coffee automation.</h2>
-          <p>
-            We are working with early partners to deploy pilot systems and shape the future of plantation-scale
-            automation.
-          </p>
+            <div class="block">
+              <div class="label">Our Approach</div>
+              <p>
+                We build intelligent field infrastructure for coffee plantations — combining optimised vision with
+                field-ready robotics to enable autonomy where it matters most. Designed for real-world deployment.
+                Built for scale.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <!-- Email capture: uses Formspree placeholder; replace action when ready -->
-        <form class="form" action="#" method="post" onsubmit="return false;">
-          <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
-                 placeholder="you@company.com" required />
-          <button type="submit">Request Updates</button>
-          <div class="microcopy">No spam. Only meaningful updates.</div>
-        </form>
-      </footer>
+        <!-- RIGHT (40%) CTA CARD -->
+        <aside class="cta" aria-label="Email capture">
+          <div class="cta_top">
+            <div class="cta_title">Join the next era of coffee automation.</div>
+            <div class="cta_sub">Get pilot updates and partnership announcements.</div>
+          </div>
+
+          <form class="form" action="#" method="post" onsubmit="return false;">
+            <label class="sr-only" for="email">Email</label>
+
+            <div class="form_row">
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email"
+                     placeholder="you@domain.com" required />
+              <button type="submit">Request Updates</button>
+            </div>
+
+            <div class="micro">No spam. Only meaningful updates.</div>
+          </form>
+
+          <div class="cta_hint">
+            For pilots and partnerships, reply to the confirmation email once we’re live.
+          </div>
+        </aside>
+
+      </section>
+
+      <!-- BOTTOM BENEFIT CHIPS -->
+      <section class="chips" aria-label="Benefits">
+        <div class="chip">Optimised vision for harsh field conditions</div>
+        <div class="chip">Integrates with existing machinery &amp; workflows</div>
+        <div class="chip">Built for plantation-scale deployment</div>
+      </section>
 
     </div>
   </main>
 
   <script>
-    // OPTIONAL: if you want basic validation + "copied" feel without backend.
-    // Replace with real form action later.
+    // Minimal "feels real" interaction until backend is wired.
     const form = document.querySelector(".form");
     form?.addEventListener("submit", () => {
       const email = document.querySelector("#email")?.value?.trim();

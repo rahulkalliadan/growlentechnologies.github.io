@@ -1,5 +1,4 @@
 :root{
-  /* Reference-style: premium light background, dark text, single accent */
   --bg0:#F7FBF7;
   --bg1:#F2F8F3;
 
@@ -7,7 +6,6 @@
   --muted:rgba(14,26,18,0.68);
   --muted2:rgba(14,26,18,0.52);
 
-  /* Coffee/green accent */
   --accent:#1E8A4A;
   --accent2:#2CCB72;
 
@@ -25,13 +23,12 @@ body{
   font-family:"Red Hat Display", system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color:var(--text);
   background:
-    radial-gradient(900px 560px at 18% 10%, rgba(44,203,114,0.16), transparent 60%),
+    radial-gradient(900px 560px at 18% 10%, rgba(44,203,114,0.18), transparent 60%),
     radial-gradient(900px 560px at 88% 18%, rgba(30,138,74,0.10), transparent 60%),
     linear-gradient(180deg, var(--bg0), var(--bg1));
-  overflow:hidden; /* no scroll on laptops */
+  overflow:hidden;
 }
 
-/* Single-screen frame */
 .page{
   min-height:100vh;
   display:flex;
@@ -49,77 +46,73 @@ body{
   gap: clamp(12px, 2vh, 22px);
 }
 
-/* Top brand strip (no nav) */
+/* Top strip */
 .top{
   display:flex;
   align-items:center;
   gap:14px;
 }
 
-.mark{
-  width:40px;height:40px;border-radius:12px;
-  background: linear-gradient(135deg, rgba(30,138,74,0.18), rgba(44,203,114,0.14));
-  border: 1px solid rgba(14,26,18,0.10);
-  box-shadow: 0 16px 40px rgba(30,138,74,0.10);
+/* If you use <img class="logo"> */
+.logo{
+  width:44px;
+  height:44px;
+  object-fit:contain;
 }
 
-.top_text{display:flex;flex-direction:column;gap:2px}
+/* Visible mark (previous was too subtle) */
+.mark{
+  width:44px;height:44px;border-radius:14px;
+  background: linear-gradient(135deg, rgba(30,138,74,0.30), rgba(44,203,114,0.22));
+  border: 1px solid rgba(30,138,74,0.28);
+  box-shadow: 0 18px 45px rgba(30,138,74,0.18);
+}
+
+.top_text{display:flex;flex-direction:column;gap:0}
+
+/* Increased size of GROWLEN TECHNOLOGIES at top */
 .brand_name{
   font-weight:900;
-  letter-spacing:0.10em;
+  letter-spacing:0.16em;
   text-transform:uppercase;
-  font-size: 12px;
-  color: rgba(14,26,18,0.70);
-}
-.eyebrow{
-  font-weight:900;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  font-size: 11px;
-  color: rgba(14,26,18,0.50);
+  font-size: 14px; /* increased */
+  color: rgba(14,26,18,0.72);
 }
 
 /* 2-column hero */
 .hero{
   display:grid;
-  grid-template-columns: 1.45fr 1fr;   /* ~60/40 */
+  grid-template-columns: 1.45fr 1fr;
   gap: clamp(16px, 2.6vw, 34px);
   align-items:stretch;
 }
 
-/* LEFT */
+/* Left */
 .left{
-  max-width: 72ch; /* readable line length */
+  max-width: 72ch;
   display:flex;
   flex-direction:column;
-  gap: clamp(8px, 1.4vh, 14px);
+  gap: clamp(10px, 1.6vh, 16px);
 }
 
+/* H1 is now the big headline */
 .h1{
   font-weight:900;
-  letter-spacing:0.03em;
-  text-transform:uppercase;
-  line-height:0.98;
-  font-size: clamp(30px, 5.2vh, 58px);
-}
-
-.h2{
-  font-weight:900;
-  line-height:1.06;
-  color: rgba(14,26,18,0.86);
-  font-size: clamp(18px, 3.3vh, 32px);
+  line-height:1.02;
+  font-size: clamp(34px, 6.4vh, 74px); /* increased */
+  color: rgba(14,26,18,0.94);
 }
 
 .value{
   color: var(--muted);
   line-height:1.55;
   font-size: clamp(13.5px, 1.95vh, 16.5px);
-  margin-top: clamp(2px, 0.8vh, 8px);
+  margin-top: 2px;
 }
 
-/* Problem + Approach blocks: clean divider feel like VC sites */
+/* Problem/Approach */
 .two_blocks{
-  margin-top: clamp(6px, 1.4vh, 12px);
+  margin-top: clamp(6px, 1.2vh, 10px);
   display:grid;
   gap: clamp(10px, 1.8vh, 16px);
 }
@@ -145,9 +138,9 @@ body{
   max-width: 70ch;
 }
 
-/* CTA CARD (designed component) */
+/* CTA */
 .cta{
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.82);
   border: 1px solid rgba(14,26,18,0.10);
   border-radius: 24px;
   box-shadow: var(--shadow);
@@ -159,7 +152,6 @@ body{
   overflow:hidden;
 }
 
-/* Accent edge + glow like premium sites */
 .cta::before{
   content:"";
   position:absolute;
@@ -169,13 +161,14 @@ body{
     radial-gradient(520px 260px at 90% 30%, rgba(30,138,74,0.12), transparent 65%);
   pointer-events:none;
 }
+
 .cta::after{
   content:"";
   position:absolute;
   left:0; top:0; bottom:0;
   width:3px;
   background: linear-gradient(180deg, var(--accent2), var(--accent));
-  opacity:0.85;
+  opacity:0.9;
 }
 
 .cta_head{position:relative}
@@ -203,7 +196,7 @@ input{
   width:100%;
   border-radius: 14px;
   border: 1px solid rgba(14,26,18,0.14);
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.97);
   padding: 12px 14px;
   font-weight: 700;
   font-size: 14px;
@@ -263,7 +256,7 @@ button:active{transform: translateY(1px)}
   flex:0 0 auto;
 }
 
-/* Bottom benefit chips (compact, even, premium) */
+/* Bottom benefit cards */
 .chips{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -271,7 +264,7 @@ button:active{transform: translateY(1px)}
 }
 
 .chip{
-  background: rgba(255,255,255,0.72);
+  background: rgba(255,255,255,0.74);
   border: 1px solid rgba(14,26,18,0.10);
   border-radius: 18px;
   padding: 12px 14px;
@@ -292,15 +285,15 @@ button:active{transform: translateY(1px)}
   border:0;
 }
 
-/* Mobile / narrow: stack and allow scroll if needed */
+/* Mobile */
 @media (max-width: 920px){
-  body{ overflow:auto; } /* small screens: readability > hard no-scroll */
+  body{ overflow:auto; }
   .container{ min-height:100vh; }
   .hero{ grid-template-columns: 1fr; }
   .chips{ grid-template-columns: 1fr; }
 }
 
-/* Short laptop heights: tighten a touch */
+/* Short heights */
 @media (max-height: 760px){
   .container{ padding: 14px; gap: 12px; }
   .two_blocks{ gap: 12px; }

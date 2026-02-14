@@ -109,6 +109,20 @@ body::after{
   text-decoration: none;
 }
 
+.brand-wrap,
+.brand-wrap:visited{
+  color: rgba(29,27,22,0.70);   /* same as your brand text */
+}
+
+.brand-wrap{
+  text-decoration: none;
+}
+
+.brand-wrap:hover{
+  text-decoration: none;
+}
+
+
 /* CRITICAL: constrain the logo */
 .brand-logo{
   width: 34px;

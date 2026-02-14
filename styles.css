@@ -106,6 +106,31 @@ body::after{
   font-size: 12px;
   color: rgba(29,27,22,0.70);
 }
+.brand-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end; /* keeps it aligned to the right */
+  gap:12px;
+}
+
+.brand{
+  font-weight:800;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+
+  /* +50% size (if it was ~12px before, now ~18px) */
+  font-size: 18px;
+
+  color: rgba(29,27,22,0.70);
+}
+
+.brand-logo{
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 
 
 /* HERO */

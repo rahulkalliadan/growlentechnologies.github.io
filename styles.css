@@ -129,12 +129,13 @@ body::after{
 }
 
 .brand-logo{
-  width: 42px;           /* bigger */
-  height: 42px;
+  width: 1.25em;          /* scales with text */
+  height: 1.25em;         /* same as width */
   object-fit: contain;
   display: block;
-  margin-top: -1px;      /* optional: optical alignment */
+  margin-right: 10px;
 }
+
 
 .brand-text{
   font-weight: 800;
@@ -147,10 +148,11 @@ body::after{
 
 /* CRITICAL: constrain the logo */
 .brand-logo{
-  width: 34px;
-  height: 34px;
+  width: 1.25em;          /* scales with text */
+  height: 1.25em;         /* same as width */
   object-fit: contain;
   display: block;
+  margin-right: 10px;
 }
 
 /* Increase text size ~50% and keep premium */
@@ -162,6 +164,11 @@ body::after{
   color: rgba(29,27,22,0.70);
 }
 
+.brand-wrap{
+  display: inline-flex;
+  align-items: center;
+  gap: 0;                 /* using margin-right on logo instead */
+}
 
 
 

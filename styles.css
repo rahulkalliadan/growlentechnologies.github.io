@@ -85,51 +85,47 @@ body::after{
 
 /* HEADER */
 .site-header{
-  position:sticky;
-  top:0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   background: rgba(251,246,238,0.88);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-  z-index:50;
+  border-bottom: 1px solid rgba(29,27,22,0.12);
 }
 
+/* IMPORTANT: header height + spacing */
 .header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* change to center if you want centered */
+  height: 64px;
 }
-.brand{
-  letter-spacing:0.20em;
-  text-transform:uppercase;
-  font-weight:800;
-  font-size: 12px;
-  color: rgba(29,27,22,0.70);
-}
+
+/* Brand row (logo + text) */
 .brand-wrap{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end; /* keeps it aligned to the right */
-  gap:12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
-.brand{
-  font-weight:800;
-  letter-spacing:0.18em;
-  text-transform:uppercase;
+/* CRITICAL: constrain the logo */
+.brand-logo{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
 
-  /* +50% size (if it was ~12px before, now ~18px) */
-  font-size: 18px;
-
+/* Increase text size ~50% and keep premium */
+.brand-text{
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 18px;              /* was ~12px earlier */
   color: rgba(29,27,22,0.70);
 }
 
-.brand-logo{
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  border-radius: 8px;
-}
 
 
 

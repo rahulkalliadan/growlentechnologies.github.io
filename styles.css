@@ -1,19 +1,25 @@
 :root{
-  --accent:#1a4d2e;            /* deep forest green */
-  --accent-2:#2d5016;
+  /* Accent (restrained coffee-green) */
+  --accent:#1f5a3a;
+  --accent-2:#2d6a43;
 
-  --bg:#fafafa;
-  --bg-tint:#f2f7f2;           /* subtle green tint */
-  --surface:#ffffff;
-  --surface-2:#f6f8f6;
+  /* Coffee paper palette */
+  --bg:#fbf6ee;           /* warm paper */
+  --bg-tint:#f3eadc;      /* deeper paper tint */
+  --surface:#fffaf2;      /* card base */
+  --surface-2:#f7efe3;    /* soft section/panel tint */
 
-  --text:#1a1a1a;
-  --muted:rgba(26,26,26,0.66);
-  --muted2:rgba(26,26,26,0.52);
-  --line:rgba(26,26,26,0.10);
+  /* Text */
+  --text:#1d1b16;         /* espresso-black */
+  --muted:rgba(29,27,22,0.68);
+  --muted2:rgba(29,27,22,0.54);
 
-  --shadow: 0 22px 60px rgba(26,26,26,0.10);
-  --shadow2: 0 16px 40px rgba(26,26,26,0.08);
+  /* Lines & shadows */
+  --line:rgba(29,27,22,0.12);
+  --line-strong:rgba(29,27,22,0.16);
+
+  --shadow: 0 22px 70px rgba(29,27,22,0.16);
+  --shadow2: 0 16px 44px rgba(29,27,22,0.12);
 
   --r:18px;
 }
@@ -35,8 +41,9 @@ body::before{
   z-index:-1;
   pointer-events:none;
   background:
-    radial-gradient(900px 520px at 14% 10%, rgba(26,77,46,0.14), transparent 60%),
-    radial-gradient(900px 520px at 86% 12%, rgba(45,80,22,0.10), transparent 60%),
+    radial-gradient(1100px 620px at 18% 10%, rgba(45,106,67,0.12), transparent 62%),
+    radial-gradient(900px 520px at 86% 16%, rgba(159,111,52,0.10), transparent 60%),
+    radial-gradient(1200px 700px at 50% -10%, rgba(255,255,255,0.75), transparent 55%),
     linear-gradient(180deg, var(--bg), var(--bg-tint));
 }
 
@@ -47,13 +54,13 @@ body::after{
   inset:0;
   z-index:-1;
   pointer-events:none;
-  background-image:
-    linear-gradient(rgba(26,26,26,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26,26,26,0.045) 1px, transparent 1px);
-  background-size: 96px 96px;
-  mask-image: radial-gradient(700px 420px at 50% 12%, black 25%, transparent 72%);
+  background:
+    radial-gradient(2px 2px at 20px 18px, rgba(29,27,22,0.06) 40%, transparent 45%) 0 0/36px 36px,
+    radial-gradient(2px 2px at 10px 12px, rgba(29,27,22,0.05) 40%, transparent 45%) 0 0/42px 42px;
   opacity:0.28;
+  mask-image: radial-gradient(850px 500px at 50% 16%, black 35%, transparent 72%);
 }
+
 
 .container{
   width:min(1200px, 92vw);
@@ -80,11 +87,12 @@ body::after{
 .site-header{
   position:sticky;
   top:0;
-  background: rgba(250,250,250,0.86);
+  background: rgba(251,246,238,0.88);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
   z-index:50;
 }
+
 .header-inner{
   display:flex;
   align-items:center;
@@ -92,12 +100,13 @@ body::after{
   padding: 14px 0;
 }
 .brand{
-  letter-spacing:0.18em;
+  letter-spacing:0.20em;
   text-transform:uppercase;
   font-weight:800;
   font-size: 12px;
-  color: rgba(26,26,26,0.72);
+  color: rgba(29,27,22,0.70);
 }
+
 
 /* HERO */
 .hero{
@@ -139,17 +148,18 @@ body::after{
 
 /* Panel blocks */
 .panel{
-  background: rgba(255,255,255,0.80);
-  border: 1px solid rgba(26,26,26,0.10);
+  background: rgba(255,250,242,0.92);
+  border: 1px solid var(--line);
   border-radius: 22px;
-  box-shadow: 0 14px 40px rgba(26,26,26,0.06);
+  box-shadow: 0 18px 60px rgba(29,27,22,0.10);
   padding: 22px;
-  position:relative;
 }
 
+
 .panel-soft{
-  background: linear-gradient(180deg, rgba(246,248,246,0.95), rgba(255,255,255,0.78));
+  background: linear-gradient(180deg, rgba(247,239,227,0.92), rgba(255,250,242,0.88));
 }
+
 
 .label{
   color: var(--accent);
@@ -293,6 +303,24 @@ body::after{
   width: 100%;
   max-width: none;
 }
+
+.capabilities{
+  background: rgba(255,250,242,0.70);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 60px rgba(29,27,22,0.08);
+}
+
+.cap-box{
+  background: rgba(255,250,242,0.92);
+  border: 1px solid rgba(29,27,22,0.14);
+}
+
+.partner-logo-frame{
+  background: rgba(255,250,242,0.92);
+  border: 1px solid rgba(29,27,22,0.14);
+  box-shadow: 0 18px 60px rgba(29,27,22,0.08);
+}
+
 
 /* Tablet: 2 columns */
 @media (max-width: 980px){

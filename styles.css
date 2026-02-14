@@ -235,6 +235,39 @@ body::after{
   border-color: rgba(26,77,46,0.20);
   box-shadow: 0 18px 50px rgba(26,26,26,0.08);
 }
+
+/* Center-align Core Capabilities content */
+.capabilities{
+  text-align: center;
+}
+
+.cap-title{
+  text-align: center;
+}
+
+.cap-box{
+  text-align: center;
+}
+
+.cap-head{
+  text-align: center;
+}
+
+.cap-text{
+  text-align: center;
+}
+
+/* Optional: make boxes look better when centered */
+.cap-boxes{
+  justify-items: center;
+}
+
+.cap-box{
+  width: 100%;
+  max-width: 680px;   /* keeps a premium readable width */
+}
+
+
 .cap-head{
   font-weight: 900;
   letter-spacing: -0.01em;

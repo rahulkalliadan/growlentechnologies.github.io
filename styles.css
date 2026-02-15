@@ -170,6 +170,31 @@ body::after{
   gap: 0;                 /* using margin-right on logo instead */
 }
 
+.brand-wrap{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Frame matches text height */
+.brand-logo-frame{
+  width: 28px;              /* tune if needed */
+  height: 28px;             /* tune if needed */
+  display: grid;
+  place-items: center;
+  overflow: hidden;         /* IMPORTANT: crops transparent padding */
+  border-radius: 8px;       /* optional, nice */
+}
+
+/* Image zoomed to fill */
+.brand-logo{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(2.2);    /* this is the key for padded PNGs */
+  transform-origin: center;
+  display: block;
+}
 
 
 /* HERO */

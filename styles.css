@@ -196,6 +196,26 @@ body::after{
   display: block;
 }
 
+.brand-logo-frame{
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;  /* optional */
+}
+
+.brand-logo{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+
+  /* IMPORTANT: remove zoom */
+  transform: none;
+}
+
 
 /* HERO */
 .hero{

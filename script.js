@@ -1,26 +1,18 @@
-// Keep it minimal (you can expand later).
-// Optional: highlight active nav link on scroll (basic)
-(() => {
-  const links = Array.from(document.querySelectorAll('.header-nav a'));
-  const sections = links
-    .map(a => document.querySelector(a.getAttribute('href')))
-    .filter(Boolean);
+// Smooth-scroll offset for sticky header
+(function () {
+  const header = document.querySelector(".site-header");
+  const headerH = () => (header ? header.getBoundingClientRect().height : 0);
 
-  if (!links.length || !sections.length) return;
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href");
+      if (!id || id === "#") return;
+      const el = document.querySelector(id);
+      if (!el) return;
 
-  const setActive = (id) => {
-    links.forEach(a => {
-      const isActive = a.getAttribute('href') === `#${id}`;
-      a.style.color = isActive ? 'rgba(17,17,17,.92)' : 'rgba(17,17,17,.55)';
+      e.preventDefault();
+      const y = window.scrollY + el.getBoundingClientRect().top - headerH() - 10;
+      window.scrollTo({ top: y, behavior: "smooth" });
     });
-  };
-
-  const io = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(e => e.isIntersecting)
-      .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) setActive(visible.target.id);
-  }, { rootMargin: '-30% 0px -60% 0px', threshold: [0.1, 0.2, 0.35] });
-
-  sections.forEach(s => io.observe(s));
+  });
 })();

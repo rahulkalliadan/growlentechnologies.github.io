@@ -1,317 +1,318 @@
-/* -----------------------------
-   Growlen — Premium coffee paper palette
------------------------------- */
-
 :root{
-  /* Palette */
-  --paper: #f6efe5;
-  --paper-2: #f3eadc;
-  --paper-3: #efe4d2;
+  /* Deep green + acid lime like your refs */
+  --forest-900:#062f1c;
+  --forest-850:#073521;
+  --forest-800:#0a3f28;
 
-  --ink: #1d1b16;
-  --muted: rgba(29,27,22,0.62);
+  --lime-500:#d7ff2f;      /* headline accent */
+  --lime-300:#e8ff7a;      /* softer highlight */
 
-  --card: rgba(255,255,255,0.40);
-  --card-strong: rgba(255,255,255,0.55);
-  --border: rgba(29,27,22,0.14);
+  --ink-900:#111111;
+  --paper-50:#fbfaf7;
+  --paper-100:#f5f2ea;
+  --paper-150:#efe9dc;
 
-  --accent: #1a4d2e; /* coffee-green */
-  --accent-soft: rgba(26,77,46,0.14);
+  --muted:#6b6b6b;
+  --line: rgba(255,255,255,.18);
+  --line-dark: rgba(17,17,17,.10);
 
-  /* Shadows */
-  --shadow: 0 18px 50px rgba(29,27,22,0.10);
-  --shadow-soft: 0 10px 30px rgba(29,27,22,0.08);
+  --radius-xl:28px;
+  --radius-lg:20px;
+  --shadow-soft: 0 18px 50px rgba(0,0,0,.12);
+  --shadow-card: 0 10px 30px rgba(0,0,0,.10);
 
-  /* Radius */
-  --r-lg: 26px;
-  --r-md: 18px;
-  --r-sm: 14px;
-
-  /* Layout */
   --container: 1200px;
 }
 
-*{ box-sizing: border-box; }
-
-html, body{
-  margin: 0;
-  padding: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-  color: var(--ink);
-  background:
-    radial-gradient(1100px 600px at 50% -120px, rgba(26,77,46,0.16), transparent 60%),
-    radial-gradient(800px 500px at 10% 25%, rgba(26,77,46,0.10), transparent 55%),
-    radial-gradient(900px 520px at 90% 35%, rgba(29,27,22,0.08), transparent 55%),
-    linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 55%, var(--paper-3) 100%);
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink-900);
+  background: radial-gradient(1200px 600px at 50% 0%, var(--paper-100), var(--paper-50));
 }
 
+/* Utilities */
 .container{
-  max-width: var(--container);
+  width: min(var(--container), calc(100% - 48px));
   margin: 0 auto;
-  padding: 0 26px;
 }
 
-/* -----------------------------
-   Header
------------------------------- */
+/* Header */
 .site-header{
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(246,239,229,0.78);
+  background: rgba(251,250,247,.75);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(29,27,22,0.10);
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
 .header-inner{
-  height: 62px;
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 14px 0;
+  gap: 16px;
 }
 
 .brand{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.brand-logo-frame{
-  width: 36px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.40);
-  border: 1px solid rgba(29,27,22,0.10);
-  box-shadow: 0 8px 20px rgba(29,27,22,0.10);
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  text-decoration:none;
+  color: inherit;
 }
 
 .brand-logo{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-  transform: none;
+  width: 26px;
+  height: 26px;
+  object-fit: contain; /* prevents zoom/crop */
+  display:block;
 }
 
-.brand-text{
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(29,27,22,0.66);
+.brand-name{
+  letter-spacing: .22em;
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(17,17,17,.70);
 }
 
-/* -----------------------------
-   Hero
------------------------------- */
+.header-nav{
+  display:flex;
+  gap: 18px;
+}
+.header-nav a{
+  text-decoration:none;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(17,17,17,.55);
+  transition: color .18s ease;
+}
+.header-nav a:hover{
+  color: rgba(17,17,17,.90);
+}
+
+/* Hero */
 .hero{
-  padding: 74px 0 26px;
-  text-align: center;
+  padding: 82px 0 70px;
+}
+.hero-inner{
+  text-align:center;
+}
+.eyebrow{
+  margin:0 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(26,77,46,.72);
 }
 
 .hero-title{
   margin: 0 auto;
-  max-width: 18ch;
-  font-size: clamp(44px, 5.1vw, 82px);
+  max-width: 980px;
+  font-size: clamp(44px, 5.2vw, 84px);
   line-height: 1.02;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   font-weight: 900;
+  color: #171717;
+  transition: text-shadow .25s ease, transform .25s ease;
 }
 
-.hero-subtitle{
-  margin: 18px auto 0;
-  max-width: 72ch;
-  font-size: clamp(16px, 1.35vw, 20px);
-  line-height: 1.7;
-  color: var(--muted);
-}
-
-/* Glow only on hover */
-.glow-on-hover{
-  transition: text-shadow 250ms ease, transform 250ms ease;
-}
-.glow-on-hover:hover{
-  text-shadow:
-    0 0 14px rgba(26,77,46,0.24),
-    0 0 30px rgba(26,77,46,0.16);
+/* subtle glow on hover (your earlier request) */
+.hero-title:hover{
+  text-shadow: 0 0 18px rgba(45, 80, 22, .22),
+               0 0 42px rgba(215, 255, 47, .18);
   transform: translateY(-1px);
 }
 
-/* -----------------------------
-   Two cards (Problem / Approach)
------------------------------- */
-.two-cards{
-  padding: 44px 0 26px;
-}
-
-.grid-2{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 26px;
-}
-
-.card{
-  background: var(--card);
-  border: 1px solid rgba(29,27,22,0.12);
-  border-radius: var(--r-lg);
-  padding: 26px 28px;
-  box-shadow: var(--shadow-soft);
-}
-
-.label{
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 14px;
-}
-
-.card-text{
-  margin: 0;
-  font-size: 20px;
+.hero-sub{
+  margin: 18px auto 0;
+  max-width: 860px;
+  font-size: clamp(16px, 1.55vw, 20px);
   line-height: 1.7;
-  color: rgba(29,27,22,0.78);
-  max-width: 58ch;
+  color: rgba(17,17,17,.62);
 }
 
-.card-strong{
+/* Section base */
+.section{
+  padding: 78px 0;
+}
+.section-inner{
+  text-align:center;
+}
+
+/* Dark green sections like your refs */
+.section-dark{
+  color: var(--lime-500);
+  background: radial-gradient(900px 500px at 50% 30%, rgba(255,255,255,.06), rgba(255,255,255,0)),
+              linear-gradient(180deg, var(--forest-850), var(--forest-900));
+}
+
+.section-title{
+  margin:0;
+  font-size: clamp(44px, 6vw, 84px);
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.section-rule{
+  width: 110px;
+  height: 4px;
+  background: var(--lime-500);
+  margin: 18px auto 0;
+  border-radius: 999px;
+  opacity: .95;
+}
+
+.section-lead{
+  margin: 34px auto 0;
+  max-width: 980px;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.7;
+  color: var(--lime-300);
+  font-weight: 600;
+}
+
+/* Blueprint approach section (light blue grid vibe) */
+.section-blueprint{
+  background:
+    linear-gradient(180deg, #c8d7e3, #c1d2de);
+  position: relative;
+  overflow:hidden;
+}
+
+.section-blueprint::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: .35;
+  pointer-events:none;
+}
+
+.section-blueprint .section-inner{
+  position: relative;
+  z-index: 1;
+  text-align:center;
+}
+
+.section-title-green{
+  color: #0a4b2d;
+}
+
+.approach-kicker{
   margin: 14px 0 0;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(10,75,45,.85);
+}
+
+.approach-quote{
+  margin: 54px auto 0;
+  max-width: 980px;
+  display:flex;
+  gap: 18px;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+.approach-bar{
+  width: 4px;
+  height: 54px;
+  background: #0a4b2d;
+  border-radius: 999px;
+  margin-top: 6px;
+}
+
+.approach-text{
+  margin:0;
+  text-align:center;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.9;
+  color: rgba(10,45,28,.85);
+  font-weight: 600;
+}
+
+/* Capabilities grid (2 rows x 3 cols, like your ref) */
+.cap-grid{
+  margin: 56px auto 0;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.cap-card{
+  padding: 34px 26px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  min-height: 210px;
+}
+
+.cap-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom: 18px;
+}
+
+.cap-num{
   font-weight: 800;
-  color: rgba(29,27,22,0.84);
+  letter-spacing: .12em;
+  font-size: 12px;
+  color: rgba(215,255,47,.60);
 }
 
-/* -----------------------------
-   Capabilities (Aligned container width)
------------------------------- */
-.capabilities{
-  padding: 18px 0 40px;
+.cap-icon{
+  width: 28px;
+  height: 28px;
+  color: var(--lime-500);
 }
-
-.capabilities-card{
-  width: 100%;                 /* ✅ aligns with Problem/Approach row */
-  background: rgba(255,255,255,0.33);
-  border: 1px solid rgba(29,27,22,0.10);
-  border-radius: var(--r-lg);
-  padding: 26px 28px 30px;
-  box-shadow: var(--shadow);
+.cap-icon svg{
+  width: 100%;
+  height: 100%;
 }
 
 .cap-title{
-  text-align: center;
-  font-size: 14px;
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.2;
   font-weight: 900;
-  letter-spacing: 0.20em;
   text-transform: uppercase;
-  color: rgba(29,27,22,0.55);
-  margin-bottom: 18px;
+  letter-spacing: .02em;
+  color: var(--lime-500);
 }
 
-.cap-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+.cap-text{
+  margin:0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(232,255,122,.86);
+  font-weight: 600;
+  max-width: 36ch;
 }
 
-.cap-chip{
-  background: rgba(246,239,229,0.55);
-  border: 1px solid rgba(29,27,22,0.12);
-  border-radius: 18px;
-  padding: 18px 16px;
-  text-align: center;
-  box-shadow: 0 10px 24px rgba(29,27,22,0.06);
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-}
-
-.cap-chip:hover{
-  transform: translateY(-2px);
-  border-color: rgba(26,77,46,0.28);
-  box-shadow: 0 16px 34px rgba(29,27,22,0.10);
-}
-
-.cap-chip-title{
-  font-weight: 900;
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: rgba(29,27,22,0.86);
-}
-
-.cap-chip-sub{
-  font-size: 17px;
-  line-height: 1.55;
-  color: rgba(29,27,22,0.62);
-}
-
-/* -----------------------------
-   Partners
------------------------------- */
-.partners{
-  padding: 28px 0 70px;
-  border-top: 1px solid rgba(29,27,22,0.10);
-}
-
-.partners-title{
-  text-align: center;
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(29,27,22,0.55);
-  margin-bottom: 18px;
-}
-
-.partner-logos{
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.partner-logo{
-  width: 360px;
-  height: 100px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.40);
-  border: 1px solid rgba(29,27,22,0.10);
-  box-shadow: var(--shadow-soft);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.partner-img{
-  width: 88%;
-  height: 78%;
-  object-fit: contain;
-  display: block;
-}
-
-/* For logos that appear too small due to transparent margins */
-.partner-img--tight{
-  transform: scale(1.55);
-}
-.partner-img--wide{
-  transform: scale(1.05);
-}
-
-/* -----------------------------
-   Responsive
------------------------------- */
+/* Responsive */
 @media (max-width: 980px){
-  .grid-2{ grid-template-columns: 1fr; }
-  .cap-grid{ grid-template-columns: 1fr 1fr; }
-  .hero{ padding-top: 60px; }
+  .header-nav{ display:none; }
+  .section{ padding: 64px 0; }
+  .cap-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cap-card{ min-height: 200px; }
 }
 
 @media (max-width: 640px){
-  .brand-text{ font-size: 16px; letter-spacing: 0.12em; }
-  .brand-logo-frame{ width: 32px; height: 32px; }
-  .hero-title{ max-width: 20ch; }
-  .card-text{ font-size: 18px; }
+  .hero{ padding: 64px 0 54px; }
   .cap-grid{ grid-template-columns: 1fr; }
-  .partner-logo{ width: min(360px, 100%); }
+  .cap-card{ padding: 28px 20px; }
+  .approach-quote{ flex-direction: column; align-items:center; }
+  .approach-bar{ height: 36px; }
 }

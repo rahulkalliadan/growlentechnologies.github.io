@@ -1,15 +1,26 @@
-// script.js
-// Keep minimal JS; optional place for future interactions.
-// (No forced animations; your hover glow is handled in CSS.)
+// Keep it minimal (you can expand later).
+// Optional: highlight active nav link on scroll (basic)
+(() => {
+  const links = Array.from(document.querySelectorAll('.header-nav a'));
+  const sections = links
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
 
-// Example: prevent empty form submission if you later add an email form.
-document.addEventListener("submit", (e) => {
-  const form = e.target;
-  if (form && form.matches("[data-email-form]")) {
-    const email = form.querySelector('input[type="email"]');
-    if (email && !email.checkValidity()) {
-      e.preventDefault();
-      email.focus();
-    }
-  }
-});
+  if (!links.length || !sections.length) return;
+
+  const setActive = (id) => {
+    links.forEach(a => {
+      const isActive = a.getAttribute('href') === `#${id}`;
+      a.style.color = isActive ? 'rgba(17,17,17,.92)' : 'rgba(17,17,17,.55)';
+    });
+  };
+
+  const io = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setActive(visible.target.id);
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: [0.1, 0.2, 0.35] });
+
+  sections.forEach(s => io.observe(s));
+})();

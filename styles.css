@@ -148,6 +148,15 @@ body{
   color: var(--muted);
 }
 
+.hero,
+.hero-content,
+.hero-inner {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* SECTION BANDS (reference-style bold blocks) */
 .band{
   padding: 72px 0;

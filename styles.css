@@ -171,6 +171,60 @@ body{
   max-width: 900px;   /* adjust as you like */
 }
 
+/* HERO BACKGROUND */
+.hero{
+  position: relative;
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+
+  /* background image */
+  background-image: url("assets/farm.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* keeps your premium warm tone */
+  border-bottom: 1px solid rgba(40, 50, 40, 0.15);
+}
+
+/* dark overlay for readability */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 14, 0.60) 0%,
+    rgba(10, 20, 14, 0.45) 55%,
+    rgba(10, 20, 14, 0.30) 100%
+  );
+}
+
+/* ensure text sits above overlay */
+.hero-inner{
+  position: relative;
+  z-index: 1;
+  text-align: center; /* since you wanted centred */
+  padding: 84px 16px;
+}
+
+/* H1 and subtitle colours for dark image */
+.hero-title{
+  color: #F7F1E6;              /* warm off-white */
+  text-shadow: 0 10px 40px rgba(0,0,0,0.45);
+}
+
+.hero-subtitle{
+  color: rgba(247, 241, 230, 0.88);
+  max-width: 900px;
+  margin: 18px auto 0;
+  text-shadow: 0 8px 28px rgba(0,0,0,0.35);
+}
+
+/* If your section headings are H2 and need to be lighter too */
+h2{
+  color: #F7F1E6;
+}
 
 
 /* SECTION BANDS (reference-style bold blocks) */

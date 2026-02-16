@@ -1,29 +1,15 @@
-(function () {
-  const form = document.getElementById("updatesForm");
-  const msg = document.getElementById("formMsg");
-  const emailInput = document.getElementById("email");
+// script.js
+// Keep minimal JS; optional place for future interactions.
+// (No forced animations; your hover glow is handled in CSS.)
 
-  if (!form || !msg || !emailInput) return;
-
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
-  }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    msg.textContent = "";
-
-    const email = emailInput.value.trim();
-
-    if (!isValidEmail(email)) {
-      msg.style.color = "rgba(180, 40, 40, 0.92)";
-      msg.textContent = "Please enter a valid email address.";
-      emailInput.focus();
-      return;
+// Example: prevent empty form submission if you later add an email form.
+document.addEventListener("submit", (e) => {
+  const form = e.target;
+  if (form && form.matches("[data-email-form]")) {
+    const email = form.querySelector('input[type="email"]');
+    if (email && !email.checkValidity()) {
+      e.preventDefault();
+      email.focus();
     }
-
-    msg.style.color = "rgba(26,77,46,0.92)";
-    msg.textContent = "Thanks — we’ll share updates soon.";
-    form.reset();
-  });
-})();
+  }
+});

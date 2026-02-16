@@ -2,116 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Growlen Technologies</title>
   <meta name="description" content="Growlen builds intelligent systems that automate labour-intensive coffee operations — improving consistency, productivity, and long-term yield." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Optional: clean premium font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Minimal header (optional) -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <span class="brand-logo-frame" aria-hidden="true">
-          <img class="brand-logo" src="assets/logo.png" alt="">
-        </span>
-        <span class="brand-text">GROWLEN TECHNOLOGIES</span>
-      </div>
+      <a class="brand" href="#top" aria-label="Growlen Technologies">
+        <img class="brand-logo" src="assets/logo.png" alt="Growlen logo" />
+        <span class="brand-name">GROWLEN TECHNOLOGIES</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Primary">
+        <a href="#problem">Problem</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#capabilities">Capabilities</a>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero -->
+  <!-- Hero (kept simple) -->
+  <main id="top">
     <section class="hero">
-      <div class="container">
-        <h1 class="hero-title glow-on-hover">Engineering the future of coffee farming</h1>
-        <p class="hero-subtitle">
-          Growlen builds intelligent systems that automate labour-intensive coffee operations — improving
-          consistency, productivity, and long-term yield.
+      <div class="container hero-inner">
+        <p class="eyebrow">Coffee • Field Automation • Vision</p>
+
+        <h1 class="hero-title">
+          Engineering the future of coffee farming
+        </h1>
+
+        <p class="hero-sub">
+          Growlen builds intelligent systems that automate labour-intensive coffee operations —
+          improving consistency, productivity, and long-term yield.
         </p>
       </div>
     </section>
 
-    <!-- Problem + Approach -->
-    <section class="two-cards">
-      <div class="container">
-        <div class="grid-2">
-          <article class="card">
-            <div class="label">PROBLEM</div>
-            <p class="card-text">
-              Coffee plantations face labour shortages, rising costs, and inconsistent manual work that impacts yield and plant health.
-            </p>
+    <!-- THE PROBLEM -->
+    <section id="problem" class="section section-dark">
+      <div class="container section-inner">
+        <h2 class="section-title">THE PROBLEM</h2>
+        <div class="section-rule"></div>
+
+        <p class="section-lead">
+          Coffee plantations face labour shortages, rising costs, and inconsistent manual work that impacts yield and plant health.
+        </p>
+      </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section id="approach" class="section section-blueprint">
+      <div class="container section-inner">
+        <h2 class="section-title section-title-green">OUR APPROACH</h2>
+        <p class="approach-kicker">Designed for real-world deployment. Built for scale.</p>
+
+        <div class="approach-quote">
+          <span class="approach-bar" aria-hidden="true"></span>
+          <p class="approach-text">
+            We build intelligent field infrastructure for coffee plantations — combining optimised vision with field-ready robotics
+            to enable autonomy where it matters most.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILT FOR REAL PLANTATIONS -->
+    <section id="capabilities" class="section section-dark">
+      <div class="container section-inner">
+        <h2 class="section-title">BUILT FOR REAL PLANTATIONS</h2>
+        <div class="section-rule"></div>
+
+        <div class="cap-grid" role="list">
+          <!-- 01 -->
+          <article class="cap-card" role="listitem">
+            <div class="cap-top">
+              <span class="cap-num">01</span>
+              <span class="cap-icon" aria-hidden="true">
+                <!-- eye icon -->
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="cap-title">Optimised Field Vision</h3>
+            <p class="cap-text">Robust perception in harsh field conditions.</p>
           </article>
 
-          <article class="card">
-            <div class="label">OUR APPROACH</div>
-            <p class="card-text">
-              We build intelligent field infrastructure for coffee plantations — combining optimised vision with field-ready robotics to enable autonomy where it matters most.
-            </p>
-            <p class="card-strong">Designed for real-world deployment. Built for scale.</p>
+          <!-- 02 -->
+          <article class="cap-card" role="listitem">
+            <div class="cap-top">
+              <span class="cap-num">02</span>
+              <span class="cap-icon" aria-hidden="true">
+                <!-- shield icon -->
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2 20 6v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M9.5 12.2 11.3 14 15 10.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="cap-title">Autonomy &amp; Safety</h3>
+            <p class="cap-text">Safe navigation and obstacle awareness in-field.</p>
+          </article>
+
+          <!-- 03 -->
+          <article class="cap-card" role="listitem">
+            <div class="cap-top">
+              <span class="cap-num">03</span>
+              <span class="cap-icon" aria-hidden="true">
+                <!-- layers icon -->
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3 3 8l9 5 9-5-9-5Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M3 12l9 5 9-5" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M3 16l9 5 9-5" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="cap-title">Workflow Integration</h3>
+            <p class="cap-text">Fits existing machinery, rows, and practices.</p>
+          </article>
+
+          <!-- 04 -->
+          <article class="cap-card" role="listitem">
+            <div class="cap-top">
+              <span class="cap-num">04</span>
+              <span class="cap-icon" aria-hidden="true">
+                <!-- bolt icon -->
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="cap-title">Plantation-Scale Deployment</h3>
+            <p class="cap-text">Built for uptime, serviceability, repeatable rollout.</p>
+          </article>
+
+          <!-- 05 -->
+          <article class="cap-card" role="listitem">
+            <div class="cap-top">
+              <span class="cap-num">05</span>
+              <span class="cap-icon" aria-hidden="true">
+                <!-- chart icon -->
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 19V5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M4 19h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M7 14l3-3 3 2 4-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="cap-title">Data-Driven Improvement</h3>
+            <p class="cap-text">Field data loops to continuously improve performance.</p>
+          </article>
+
+          <!-- 06 -->
+          <article class="cap-card" role="listitem">
+            <div class="cap-top">
+              <span class="cap-num">06</span>
+              <span class="cap-icon" aria-hidden="true">
+                <!-- leaf icon -->
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20 4C12 4 6 9 6 17c0 1.7.4 3.2 1 4 1.4-.3 2.8-1 3.8-2 2.3-2.3 2.7-5.8 2.7-8.5 2.7 0 6.2-.4 8.5-2.7 1-1 1.7-2.4 2-3.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M6 17c2-2 5-4 10-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="cap-title">Coffee First Field Design</h3>
+            <p class="cap-text">Built for coffee plants, rows, terrain, workflows.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Built for Real Plantations (aligned to same container width) -->
-    <section class="capabilities">
-      <div class="container">
-        <div class="capabilities-card">
-          <div class="cap-title">BUILT FOR REAL PLANTATIONS</div>
-
-          <div class="cap-grid">
-            <div class="cap-chip">
-              <div class="cap-chip-title">Optimised Field Vision</div>
-              <div class="cap-chip-sub">Robust perception in harsh field conditions</div>
-            </div>
-
-            <div class="cap-chip">
-              <div class="cap-chip-title">Autonomy &amp; Safety</div>
-              <div class="cap-chip-sub">Safe navigation and obstacle awareness in-field</div>
-            </div>
-
-            <div class="cap-chip">
-              <div class="cap-chip-title">Workflow Integration</div>
-              <div class="cap-chip-sub">Fits existing machinery, rows, and practices</div>
-            </div>
-
-            <div class="cap-chip">
-              <div class="cap-chip-title">Plantation-Scale Deployment</div>
-              <div class="cap-chip-sub">Built for uptime, serviceability, repeatable rollout</div>
-            </div>
-
-            <div class="cap-chip">
-              <div class="cap-chip-title">Data-Driven Improvement</div>
-              <div class="cap-chip-sub">Field data loops to continuously improve performance</div>
-            </div>
-
-            <div class="cap-chip">
-              <div class="cap-chip-title">Coffee First Field Design</div>
-              <div class="cap-chip-sub">Built for coffee plants, rows, terrain, workflows</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partners -->
-    <section class="partners">
-      <div class="container">
-        <div class="partners-title">PARTNERS</div>
-
-        <div class="partner-logos">
-          <div class="partner-logo" aria-label="Partner logo 1">
-            <img src="assets/Partner logo 1.png" alt="Partner 1 logo" class="partner-img partner-img--wide">
-          </div>
-
-          <div class="partner-logo" aria-label="Partner logo 2">
-            <img src="assets/Partner logo 2.png" alt="Partner 2 logo" class="partner-img partner-img--tight">
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- (Optional) Partners section later — you already have it working -->
   </main>
 
   <script src="script.js"></script>

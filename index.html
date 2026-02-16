@@ -2,141 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Growlen Technologies — Coffee Farming Automation</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Growlen Technologies</title>
   <meta name="description" content="Growlen builds intelligent systems that automate labour-intensive coffee operations — improving consistency, productivity, and long-term yield." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-logo-frame" aria-hidden="true">
+          <img class="brand-logo" src="assets/logo.png" alt="">
+        </span>
+        <span class="brand-text">GROWLEN TECHNOLOGIES</span>
+      </div>
+    </div>
+  </header>
 
-  <!-- HEADER -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand-wrap" href="#">
-     <span class="brand-logo-frame" aria-hidden="true">
-  <img class="brand-logo" src="assets/logo.png" alt="">
-</span>
-
-      <span class="brand-text">GROWLEN TECHNOLOGIES</span>
-    </a>
-  </div>
-</header>
-
-
-
-  <main id="main">
-
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="container hero-inner">
-        <h1 class="hero-title">Engineering the future of coffee farming</h1>
-        <p class="hero-sub">
-          Growlen builds intelligent systems that automate labour-intensive coffee operations — improving consistency,
-          productivity, and long-term yield.
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title glow-on-hover">Engineering the future of coffee farming</h1>
+        <p class="hero-subtitle">
+          Growlen builds intelligent systems that automate labour-intensive coffee operations — improving
+          consistency, productivity, and long-term yield.
         </p>
       </div>
     </section>
 
-    <!-- CONTENT COLUMN (Problem + Approach stacked) -->
-<section class="content">
-  <div class="container">
+    <!-- Problem + Approach -->
+    <section class="two-cards">
+      <div class="container">
+        <div class="grid-2">
+          <article class="card">
+            <div class="label">PROBLEM</div>
+            <p class="card-text">
+              Coffee plantations face labour shortages, rising costs, and inconsistent manual work that impacts yield and plant health.
+            </p>
+          </article>
 
-    <div class="two-panels">
-      <article class="panel">
-        <div class="label">Problem</div>
-        <p class="copy">
-          Coffee plantations face labour shortages, rising costs, and inconsistent manual work that impacts yield and
-          plant health.
-        </p>
-      </article>
-
-      <article class="panel panel-soft">
-        <div class="label">Our Approach</div>
-        <p class="copy">
-          We build intelligent field infrastructure for coffee plantations — combining optimised vision with field-ready
-          robotics to enable autonomy where it matters most.
-        </p>
-        <p class="emphasis">Designed for real-world deployment. Built for scale.</p>
-      </article>
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- BOTTOM 2-COLUMN: boxes left + CTA right -->
-<section class="bottom">
-  <div class="container bottom-center">
-
-    <div class="capabilities">
-      <div class="cap-title">BUILT FOR REAL PLANTATIONS</div>
-
-      <div class="cap-boxes">
-        <div class="cap-box">
-          <div class="cap-head">Optimised Field Vision</div>
-          <div class="cap-text">Robust perception in harsh field conditions</div>
+          <article class="card">
+            <div class="label">OUR APPROACH</div>
+            <p class="card-text">
+              We build intelligent field infrastructure for coffee plantations — combining optimised vision with field-ready robotics to enable autonomy where it matters most.
+            </p>
+            <p class="card-strong">Designed for real-world deployment. Built for scale.</p>
+          </article>
         </div>
-
-        <div class="cap-box">
-          <div class="cap-head">Autonomy & Safety</div>
-          <div class="cap-text">Safe navigation and obstacle awareness in-field </div>
-        </div>
-
-        <div class="cap-box">
-          <div class="cap-head">Workflow Integration</div>
-          <div class="cap-text">Fits existing machinery, rows, and practices</div>
-        </div>
-
-        <div class="cap-box">
-          <div class="cap-head">Plantation-Scale Deployment</div>
-          <div class="cap-text">Built for uptime, serviceability, repeatable rollout </div>
-        </div>
-
-        <div class="cap-box">
-          <div class="cap-head">Data-Driven Improvement</div>
-          <div class="cap-text">Field data loops to continuously improve performance </div>
-        </div>
-
-        <div class="cap-box">
-          <div class="cap-head">Coffee First Field Design</div>
-          <div class="cap-text">Built for coffee plants, rows, terrain, workflows </div>
-        </div>
-        
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- Built for Real Plantations (aligned to same container width) -->
+    <section class="capabilities">
+      <div class="container">
+        <div class="capabilities-card">
+          <div class="cap-title">BUILT FOR REAL PLANTATIONS</div>
 
-<!-- Partner -->
-    
+          <div class="cap-grid">
+            <div class="cap-chip">
+              <div class="cap-chip-title">Optimised Field Vision</div>
+              <div class="cap-chip-sub">Robust perception in harsh field conditions</div>
+            </div>
+
+            <div class="cap-chip">
+              <div class="cap-chip-title">Autonomy &amp; Safety</div>
+              <div class="cap-chip-sub">Safe navigation and obstacle awareness in-field</div>
+            </div>
+
+            <div class="cap-chip">
+              <div class="cap-chip-title">Workflow Integration</div>
+              <div class="cap-chip-sub">Fits existing machinery, rows, and practices</div>
+            </div>
+
+            <div class="cap-chip">
+              <div class="cap-chip-title">Plantation-Scale Deployment</div>
+              <div class="cap-chip-sub">Built for uptime, serviceability, repeatable rollout</div>
+            </div>
+
+            <div class="cap-chip">
+              <div class="cap-chip-title">Data-Driven Improvement</div>
+              <div class="cap-chip-sub">Field data loops to continuously improve performance</div>
+            </div>
+
+            <div class="cap-chip">
+              <div class="cap-chip-title">Coffee First Field Design</div>
+              <div class="cap-chip-sub">Built for coffee plants, rows, terrain, workflows</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
     <section class="partners">
-  <div class="container partners-inner">
-    <div class="partners-title">PARTNERS</div>
+      <div class="container">
+        <div class="partners-title">PARTNERS</div>
 
-<div class="partner-logos">
-  <div class="partner-logo-frame">
-    <img class="partner-logo-img" src="assets/Partner%20logo%201.png" alt="Partner logo 1">
-  </div>
+        <div class="partner-logos">
+          <div class="partner-logo" aria-label="Partner logo 1">
+            <img src="assets/Partner logo 1.png" alt="Partner 1 logo" class="partner-img partner-img--wide">
+          </div>
 
-  <div class="partner-logo-frame">
-    <img class="partner-logo-img partner-logo-img--tight" src="assets/Partner%20logo%202.png" alt="Partner logo 2">
-  </div>
-</div>
-
-  </div>
-</section>
-
-
-
-
+          <div class="partner-logo" aria-label="Partner logo 2">
+            <img src="assets/Partner logo 2.png" alt="Partner 2 logo" class="partner-img partner-img--tight">
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>

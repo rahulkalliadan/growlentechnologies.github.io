@@ -156,6 +156,22 @@ body{
   margin-right: auto;
 }
 
+/* Hero subtitle (the line under the big heading) */
+.hero p,
+.hero .subhead,
+.hero .hero-subtitle,
+.hero .subtitle {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* If the subtitle has a width/max-width, keep it centred */
+.hero p {
+  max-width: 900px;   /* adjust as you like */
+}
+
+
 
 /* SECTION BANDS (reference-style bold blocks) */
 .band{

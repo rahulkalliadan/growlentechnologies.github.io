@@ -194,11 +194,13 @@ body{
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 20, 14, 0.60) 0%,
-    rgba(10, 20, 14, 0.45) 55%,
-    rgba(10, 20, 14, 0.30) 100%
+    rgba(8, 18, 12, 0.55) 0%,
+    rgba(8, 18, 12, 0.55) 55%,
+    rgba(6, 44, 28, 0.95) 92%,
+    rgba(6, 44, 28, 1) 100%
   );
 }
+
 
 /* ensure text sits above overlay */
 .hero-inner{
@@ -279,6 +281,36 @@ h2{
 .band-problem .band-rule{
   background: var(--lime);
 }
+
+.section-problem{
+  width: 100%;
+  background: radial-gradient(1200px 500px at 50% 0%,
+    rgba(60, 140, 80, 0.25) 0%,
+    rgba(8, 58, 36, 0.95) 60%,
+    rgba(6, 44, 28, 1) 100%
+  );
+  padding: 90px 0;
+}
+
+.section-problem .container{
+  text-align: center;
+}
+
+.section-problem .section-title{
+  color: #F3EFE5;          /* warm off-white */
+  letter-spacing: 0.06em;
+  margin: 0 0 18px 0;
+  text-transform: uppercase;
+}
+
+.section-problem .section-body{
+  color: rgba(243, 239, 229, 0.90);
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
 
 /* APPROACH (cool grid paper) */
 .band-approach .band-inner{

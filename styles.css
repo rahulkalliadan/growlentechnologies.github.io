@@ -301,6 +301,15 @@ h2{
   letter-spacing: .02em;
 }
 
+/* Make the big faint section title match the accent heading colour */
+.approach-title,
+.section-title-big,
+.section-watermark {
+  color: #0f4b2a;      /* same green as your "Designed for..." line */
+  opacity: 1;          /* remove the faint look */
+}
+
+
 /* CAPABILITIES (dark green block, 3 columns) */
 .capabilities{
   padding: 72px 0;

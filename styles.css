@@ -567,3 +567,22 @@ h2{
   transform: translateX(-50%) !important;
   right: auto !important;
 }
+
+/* Center the little underline/rule under section headings */
+:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
+  :is(.title-rule, .rule, .underline, .section-underline, .divider, .line) {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* If the underline is created via ::before / ::after */
+:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
+  :is(h1, h2, h3, .section-title, .section-heading, .watermark)::before,
+:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
+  :is(h1, h2, h3, .section-title, .section-heading, .watermark)::after {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+

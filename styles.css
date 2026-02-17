@@ -432,3 +432,11 @@ body{
   .cap-grid{ grid-template-columns: 1fr; }
   .partners-grid{ grid-template-columns: 1fr; }
 }
+
+html, body{
+  overflow-x: hidden;
+}
+
+body{
+  overflow-y: auto;  /* avoid weird scroll containers */
+}

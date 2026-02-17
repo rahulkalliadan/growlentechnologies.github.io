@@ -535,3 +535,35 @@ h2{
   filter: none !important;
   mix-blend-mode: normal !important;
 }
+
+/* ===== FORCE-CENTRE: THE PROBLEM / OUR APPROACH / BUILT FOR REAL PLANTATIONS ===== */
+
+/* 1) Centre the whole content stack inside these sections/cards */
+:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
+  :is(.content, .inner, .section-inner, .card, .panel, .box, .wrap, .container) {
+  text-align: center !important;
+}
+
+/* 2) Centre the headings themselves (covers normal + big title variants) */
+:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
+  :is(h1, h2, h3, .section-title, .section-heading, .watermark, .section-watermark, .title) {
+  text-align: center !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 3) Centre the underline/rule element if it is a real div/span */
+:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
+  :is(.title-rule, .rule, .underline, .section-underline, .divider) {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 4) Centre the underline if it is made via ::after on the title */
+:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
+  :is(h1, h2, h3, .section-title, .section-heading, .watermark)::after {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  right: auto !important;
+}

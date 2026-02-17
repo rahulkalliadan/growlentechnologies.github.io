@@ -114,7 +114,16 @@ body{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
 }
+.hero{
+  min-height: 100vh;   /* instead of 72vh */
+  height: 100vh;       /* forces full screen */
+  padding: 0;          /* avoid extra height */
+  background-size: cover;
+  background-position: center;
+}
+
 
 .hero-overlay{
   position:absolute;
@@ -131,7 +140,7 @@ body{
   position: relative;
   z-index: 1;
   text-align:center;
-  padding: 84px 16px;
+  padding: 0 16px;
 }
 
 .hero-title{

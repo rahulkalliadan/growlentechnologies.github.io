@@ -165,13 +165,13 @@ body{
 }
 
 .hero-subtitle{
-  margin: 0 auto;
-  max-width: 900px;
-  font-size: 18px;
+  font-size: clamp(18px, 1.25vw + 14px, 24px);
+  font-weight: 700;
   line-height: 1.7;
-  color: rgba(247, 241, 230, 0.88);
-  text-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  max-width: 900px;
+  margin: 18px auto 0;
 }
+
 
 /* ===== FULL-WIDTH BANDS ===== */
 .band{

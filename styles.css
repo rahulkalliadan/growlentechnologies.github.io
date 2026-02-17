@@ -1,5 +1,4 @@
 :root{
-  /* Premium coffee-paper palette + restrained coffee-green + lime highlight */
   --paper: #f6efe3;
   --paper-2:#f2e7d6;
   --ink: #1a1a1a;
@@ -9,11 +8,9 @@
   --forest-2:#0a3a21;
   --lime:#d7ff3a;
 
-  --card: rgba(255,255,255,.06);
-  --line: rgba(255,255,255,.18);
-
   --shadow-soft: 0 22px 70px rgba(0,0,0,.14);
   --shadow-card: 0 16px 46px rgba(0,0,0,.12);
+
   --radius-xl: 22px;
   --radius-lg: 18px;
 
@@ -23,9 +20,9 @@
 *{ box-sizing:border-box; }
 html, body{ height:100%; }
 html{ scroll-behavior: smooth; }
+body{ margin:0; overflow-x:hidden; }
 
 body{
-  margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, "SF Pro Display","SF Pro Text", Inter, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--ink);
   background:
@@ -34,11 +31,12 @@ body{
     linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
 }
 
-/* Helpers */
 .container{
   width: min(var(--container), calc(100% - 48px));
   margin: 0 auto;
 }
+
+.center{ text-align:center; }
 
 /* HEADER */
 .site-header{
@@ -67,7 +65,6 @@ body{
 }
 
 .brand-logo{
-  /* Prevent the “giant zoomed logo” problem */
   width: 28px;
   height: 28px;
   object-fit: contain;
@@ -78,7 +75,7 @@ body{
 .brand-text{
   letter-spacing: .22em;
   font-weight: 700;
-  font-size: 14px;  /* ~50% bigger than your earlier tiny all-caps */
+  font-size: 14px;
   opacity: .85;
   text-transform: uppercase;
 }
@@ -107,20 +104,34 @@ body{
 
 /* HERO */
 .hero{
-  padding: 92px 0 64px;
+  position: relative;
+  min-height: 72vh;
+  display:flex;
+  align-items:center;
+  border-bottom: 1px solid rgba(40, 50, 40, 0.15);
+
+  background-image: url("./assets/farm.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 20, 14, 0.60) 0%,
+    rgba(10, 20, 14, 0.45) 55%,
+    rgba(10, 20, 14, 0.30) 100%
+  );
 }
 
 .hero-inner{
-  text-align: left;
-}
-
-.hero-kicker{
-  margin: 0 0 18px;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(15,74,42,.82);
+  position: relative;
+  z-index: 1;
+  text-align:center;
+  padding: 84px 16px;
 }
 
 .hero-title{
@@ -131,116 +142,43 @@ body{
   font-weight: 900;
   display: inline-block;
   transition: text-shadow .22s ease, transform .22s ease;
+  color: #F7F1E6;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.45);
 }
 
 .hero-title.is-glow{
   text-shadow:
     0 0 24px rgba(15,74,42,.22),
-    0 0 42px rgba(215,255,58,.18);
+    0 0 42px rgba(215,255,58,.18),
+    0 10px 40px rgba(0,0,0,0.45);
   transform: translateY(-1px);
 }
 
 .hero-subtitle{
-  margin: 0;
+  margin: 0 auto;
   max-width: 900px;
   font-size: 18px;
   line-height: 1.7;
-  color: var(--muted);
-}
-
-.hero,
-.hero-content,
-.hero-inner {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Hero subtitle (the line under the big heading) */
-.hero p,
-.hero .subhead,
-.hero .hero-subtitle,
-.hero .subtitle {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* If the subtitle has a width/max-width, keep it centred */
-.hero p {
-  max-width: 900px;   /* adjust as you like */
-}
-
-/* HERO BACKGROUND */
-.hero{
-  position: relative;
-  min-height: 72vh;
-  display: flex;
-  align-items: center;
-
-  /* background image */
-  background-image: url("assets/farm.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* keeps your premium warm tone */
-  border-bottom: 1px solid rgba(40, 50, 40, 0.15);
-}
-
-/* dark overlay for readability */
-.hero-overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 20, 14, 0.60) 0%,
-    rgba(10, 20, 14, 0.45) 55%,
-    rgba(10, 20, 14, 0.30) 100%
-  );
-}
-
-/* ensure text sits above overlay */
-.hero-inner{
-  position: relative;
-  z-index: 1;
-  text-align: center; /* since you wanted centred */
-  padding: 84px 16px;
-}
-
-/* H1 and subtitle colours for dark image */
-.hero-title{
-  color: #F7F1E6;              /* warm off-white */
-  text-shadow: 0 10px 40px rgba(0,0,0,0.45);
-}
-
-.hero-subtitle{
   color: rgba(247, 241, 230, 0.88);
-  max-width: 900px;
-  margin: 18px auto 0;
   text-shadow: 0 8px 28px rgba(0,0,0,0.35);
 }
 
-/* If your section headings are H2 and need to be lighter too */
-h2{
-  color: #F7F1E6;
-}
-
-
-/* SECTION BANDS (reference-style bold blocks) */
+/* ===== FULL-WIDTH BANDS ===== */
 .band{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   padding: 72px 0;
 }
 
 .band-inner{
-  padding: 56px 56px;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-soft);
+  padding: 56px 0;
 }
 
+/* Band headings */
 .band-head{
   display:flex;
   flex-direction: column;
+  align-items:center;
   gap: 14px;
   margin-bottom: 18px;
 }
@@ -258,76 +196,71 @@ h2{
   width: 92px;
   height: 4px;
   border-radius: 999px;
+  margin: 0 auto;
 }
 
 .band-body{
-  margin: 0;
+  margin: 0 auto;
   max-width: 980px;
   font-size: 20px;
   line-height: 1.7;
-  opacity: .95;
 }
 
-/* PROBLEM (deep green + lime) */
-.band-problem .band-inner{
-  background: radial-gradient(900px 420px at 50% 0%, rgba(215,255,58,.12) 0%, rgba(215,255,58,0) 60%),
-              linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 100%);
-  color: var(--lime);
-  border: 1px solid rgba(215,255,58,.15);
-}
-
-.band-problem .band-rule{
-  background: var(--lime);
-}
-
-/* APPROACH (cool grid paper) */
-.band-approach .band-inner{
+/* PROBLEM */
+.band-problem{
   background:
-    linear-gradient(0deg, rgba(255,255,255,.70), rgba(255,255,255,.70)),
-    linear-gradient(to right, rgba(15,74,42,.10) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15,74,42,.10) 1px, transparent 1px);
-  background-size: auto, 64px 64px, 64px 64px;
-  border: 1px solid rgba(15,74,42,.12);
+    radial-gradient(900px 420px at 50% 0%, rgba(215,255,58,.12) 0%, rgba(215,255,58,0) 60%),
+    linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 100%);
+  color: var(--lime);
+  border-top: 1px solid rgba(215,255,58,.10);
+  border-bottom: 1px solid rgba(215,255,58,.10);
+}
+
+.band-problem .band-title{ color: #efece4; }
+.band-problem .band-rule{ background: var(--lime); }
+.band-problem .band-body{ color: var(--lime); }
+
+/* APPROACH */
+.band-approach{
+  background-color: #f7f4ee;
+  background-image:
+    linear-gradient(rgba(15,74,42,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15,74,42,.10) 1px, transparent 1px);
+  background-size: 64px 64px;
+  border-top: 1px solid rgba(15,74,42,.10);
+  border-bottom: 1px solid rgba(15,74,42,.10);
   color: rgba(15,74,42,.92);
 }
 
-.band-approach .band-rule{
-  background: rgba(15,74,42,.85);
-}
+.band-approach .band-title{ color: rgba(15,74,42,.92); }
+.band-approach .band-rule{ background: rgba(15,74,42,.85); }
 
 .approach-emph{
   margin: 0 0 18px;
   font-weight: 800;
   letter-spacing: .02em;
+  color: rgba(15,74,42,.92);
 }
 
-/* Make the big faint section title match the accent heading colour */
-.approach-title,
-.section-title-big,
-.section-watermark {
-  color: #0f4b2a;      /* same green as your "Designed for..." line */
-  opacity: 1;          /* remove the faint look */
+.band-approach .band-body{
+  color: rgba(15,74,42,.92);
 }
 
-#approach,
-#approach * {
-  opacity: 1;
-}
-
-
-/* CAPABILITIES (dark green block, 3 columns) */
-.capabilities{
+/* CAPABILITIES band wrapper */
+.band-capabilities{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   padding: 72px 0;
+  background:
+    radial-gradient(900px 520px at 15% 0%, rgba(215,255,58,.10) 0%, rgba(215,255,58,0) 55%),
+    linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 100%);
+  color: var(--lime);
+  border-top: 1px solid rgba(215,255,58,.10);
+  border-bottom: 1px solid rgba(215,255,58,.10);
 }
 
 .cap-inner{
-  padding: 56px;
-  border-radius: var(--radius-xl);
-  background: radial-gradient(900px 520px at 15% 0%, rgba(215,255,58,.10) 0%, rgba(215,255,58,0) 55%),
-              linear-gradient(180deg, var(--forest) 0%, var(--forest-2) 100%);
-  color: var(--lime);
-  border: 1px solid rgba(215,255,58,.15);
-  box-shadow: var(--shadow-soft);
+  padding: 0;
 }
 
 .cap-head{
@@ -341,6 +274,7 @@ h2{
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  color: #efece4;
 }
 
 .cap-subtitle{
@@ -391,10 +325,7 @@ h2{
   opacity: .95;
 }
 
-.cap-icon svg{
-  width:100%;
-  height:100%;
-}
+.cap-icon svg{ width:100%; height:100%; }
 
 .cap-card h3{
   margin: 0 0 8px;
@@ -402,6 +333,7 @@ h2{
   letter-spacing: .02em;
   text-transform: uppercase;
   font-weight: 900;
+  color: var(--lime);
 }
 
 .cap-card p{
@@ -454,7 +386,7 @@ h2{
 .partner-card img{
   width: 100%;
   height: 92px;
-  object-fit: contain; /* keeps logos from cropping/zooming */
+  object-fit: contain;
   display:block;
   margin: 0 auto 14px;
   filter: drop-shadow(0 10px 22px rgba(0,0,0,.10));
@@ -482,173 +414,11 @@ h2{
 
 /* RESPONSIVE */
 @media (max-width: 980px){
-  .nav{ display:none; } /* keep clean on mobile */
-  .band-inner, .cap-inner, .partners-inner{ padding: 34px; }
+  .nav{ display:none; }
   .cap-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 
 @media (max-width: 640px){
-  .hero{ padding: 70px 0 40px; }
-  .band{ padding: 50px 0; }
   .cap-grid{ grid-template-columns: 1fr; }
   .partners-grid{ grid-template-columns: 1fr; }
-}
-
-/* FORCE the big watermark title colour (OUR APPROACH) */
-#approach .watermark,
-#approach .section-watermark,
-#approach .section-title-big,
-#approach .bg-title,
-#approach h2,
-#approach .ghost-title,
-#approach .big-title,
-#approach .title-watermark,
-#approach .approach-watermark {
-  color: #0f4b2a !important;  /* same as your kicker */
-  opacity: 1 !important;
-  filter: none !important;
-  mix-blend-mode: normal !important;
-}
-
-/* If watermark is implemented via pseudo-element */
-#approach .watermark::before,
-#approach .watermark::after,
-#approach .section-watermark::before,
-#approach .section-watermark::after,
-#approach .section-title-big::before,
-#approach .section-title-big::after,
-#approach .bg-title::before,
-#approach .bg-title::after {
-  color: #0f4b2a !important;
-
-/* Centre the main section headings */
-#problem h2,
-#approach h2,
-#capabilities h2 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-  
-  opacity: 1 !important;
-  filter: none !important;
-  mix-blend-mode: normal !important;
-}
-
-/* ===== FORCE-CENTRE: THE PROBLEM / OUR APPROACH / BUILT FOR REAL PLANTATIONS ===== */
-
-/* 1) Centre the whole content stack inside these sections/cards */
-:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
-  :is(.content, .inner, .section-inner, .card, .panel, .box, .wrap, .container) {
-  text-align: center !important;
-}
-
-/* 2) Centre the headings themselves (covers normal + big title variants) */
-:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
-  :is(h1, h2, h3, .section-title, .section-heading, .watermark, .section-watermark, .title) {
-  text-align: center !important;
-  width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* 3) Centre the underline/rule element if it is a real div/span */
-:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
-  :is(.title-rule, .rule, .underline, .section-underline, .divider) {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* 4) Centre the underline if it is made via ::after on the title */
-:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
-  :is(h1, h2, h3, .section-title, .section-heading, .watermark)::after {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  right: auto !important;
-}
-
-/* Center the little underline/rule under section headings */
-:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
-  :is(.title-rule, .rule, .underline, .section-underline, .divider, .line) {
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* If the underline is created via ::before / ::after */
-:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
-  :is(h1, h2, h3, .section-title, .section-heading, .watermark)::before,
-:is(#problem, #approach, #capabilities, .problem, .approach, .capabilities)
-  :is(h1, h2, h3, .section-title, .section-heading, .watermark)::after {
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
-}
-
-/* Force section headers to centre-align as a stack */
-.problem-card,
-.approach-card,
-.capabilities-card,
-.problem-panel,
-.approach-panel,
-.capabilities-panel,
-#problem,
-#approach,
-#capabilities,
-.section,
-.section-block,
-.section-card {
-  /* safe no-op for sections that don't exist */
-}
-
-/* If you have a header wrapper inside each section */
-.section-header,
-.section-head,
-.block-head,
-.card-head {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;  /* THIS centres the line */
-  text-align: center !important;
-}
-
-/* If the line is a real element */
-.section-header hr,
-.section-header .line,
-.section-header .rule,
-.section-header .divider,
-.section-head hr,
-.section-head .line,
-.section-head .rule,
-.section-head .divider,
-.block-head hr,
-.block-head .line,
-.block-head .rule,
-.block-head .divider,
-.card-head hr,
-.card-head .line,
-.card-head .rule,
-.card-head .divider {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block !important;
-}
-
-/* If the line is created as a pseudo element on the title */
-.section-header .title::after,
-.section-header h2::after,
-.section-header h3::after,
-.section-head .title::after,
-.section-head h2::after,
-.section-head h3::after,
-.block-head .title::after,
-.block-head h2::after,
-.block-head h3::after,
-.card-head .title::after,
-.card-head h2::after,
-.card-head h3::after {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  right: auto !important;
 }

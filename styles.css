@@ -586,3 +586,69 @@ h2{
   transform: translateX(-50%) !important;
 }
 
+/* Force section headers to centre-align as a stack */
+.problem-card,
+.approach-card,
+.capabilities-card,
+.problem-panel,
+.approach-panel,
+.capabilities-panel,
+#problem,
+#approach,
+#capabilities,
+.section,
+.section-block,
+.section-card {
+  /* safe no-op for sections that don't exist */
+}
+
+/* If you have a header wrapper inside each section */
+.section-header,
+.section-head,
+.block-head,
+.card-head {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;  /* THIS centres the line */
+  text-align: center !important;
+}
+
+/* If the line is a real element */
+.section-header hr,
+.section-header .line,
+.section-header .rule,
+.section-header .divider,
+.section-head hr,
+.section-head .line,
+.section-head .rule,
+.section-head .divider,
+.block-head hr,
+.block-head .line,
+.block-head .rule,
+.block-head .divider,
+.card-head hr,
+.card-head .line,
+.card-head .rule,
+.card-head .divider {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+/* If the line is created as a pseudo element on the title */
+.section-header .title::after,
+.section-header h2::after,
+.section-header h3::after,
+.section-head .title::after,
+.section-head h2::after,
+.section-head h3::after,
+.block-head .title::after,
+.block-head h2::after,
+.block-head h3::after,
+.card-head .title::after,
+.card-head h2::after,
+.card-head h3::after {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  right: auto !important;
+}

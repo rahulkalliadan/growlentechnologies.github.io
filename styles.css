@@ -488,3 +488,34 @@ h2{
   .cap-grid{ grid-template-columns: 1fr; }
   .partners-grid{ grid-template-columns: 1fr; }
 }
+
+/* FORCE the big watermark title colour (OUR APPROACH) */
+#approach .watermark,
+#approach .section-watermark,
+#approach .section-title-big,
+#approach .bg-title,
+#approach h2,
+#approach .ghost-title,
+#approach .big-title,
+#approach .title-watermark,
+#approach .approach-watermark {
+  color: #0f4b2a !important;  /* same as your kicker */
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+/* If watermark is implemented via pseudo-element */
+#approach .watermark::before,
+#approach .watermark::after,
+#approach .section-watermark::before,
+#approach .section-watermark::after,
+#approach .section-title-big::before,
+#approach .section-title-big::after,
+#approach .bg-title::before,
+#approach .bg-title::after {
+  color: #0f4b2a !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}

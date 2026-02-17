@@ -520,6 +520,17 @@ h2{
 #approach .bg-title::before,
 #approach .bg-title::after {
   color: #0f4b2a !important;
+
+/* Centre the main section headings */
+#problem h2,
+#approach h2,
+#capabilities h2 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  
   opacity: 1 !important;
   filter: none !important;
   mix-blend-mode: normal !important;

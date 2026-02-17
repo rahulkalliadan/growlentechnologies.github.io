@@ -309,6 +309,11 @@ h2{
   opacity: 1;          /* remove the faint look */
 }
 
+#approach,
+#approach * {
+  opacity: 1;
+}
+
 
 /* CAPABILITIES (dark green block, 3 columns) */
 .capabilities{
